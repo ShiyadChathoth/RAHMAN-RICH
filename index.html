@@ -775,9 +775,8 @@ input.invalid, textarea.invalid, select.invalid {
     // --- Advanced REAL-TIME Form Validation Script ---
     document.addEventListener('DOMContentLoaded', function() {
         const bookingForm = document.getElementById('bookingForm');
+        const submitButton = bookingForm.querySelector('button[type="submit"]');
 
-        // --- Field Definitions ---
-        // We define all fields and their rules in one place for easy management.
         const fieldsToValidate = [
             { id: 'org-name', required: true, message: 'This field is required.' },
             { id: 'head-name', required: true, pattern: /^[a-zA-Z\s]+$/, message: 'Please enter a valid name (letters only).' },
@@ -789,11 +788,9 @@ input.invalid, textarea.invalid, select.invalid {
             { id: 'medium', required: true, message: 'This field is required.' }
         ];
 
-        // --- Attach Real-Time Listeners ---
         fieldsToValidate.forEach(field => {
             const input = document.getElementById(field.id);
             if (input) {
-                // 'input' event for text fields, 'change' for dropdowns
                 const eventType = (input.tagName.toLowerCase() === 'select') ? 'change' : 'input';
                 input.addEventListener(eventType, () => {
                     validateField(input, field);
@@ -801,38 +798,59 @@ input.invalid, textarea.invalid, select.invalid {
             }
         });
 
-        // --- Final Validation on Submit ---
+
+        // --- Final Validation and AJAX Submission to your Pi Server ---
         if (bookingForm) {
             bookingForm.addEventListener('submit', function(event) {
                 event.preventDefault(); // Stop the form from submitting
-                
+
                 let isFormValid = true;
                 fieldsToValidate.forEach(field => {
                     const input = document.getElementById(field.id);
-                    // We re-validate every field on submit to catch any missed ones
                     if (!input.disabled && !validateField(input, field)) {
                         isFormValid = false;
                     }
                 });
 
                 if (isFormValid) {
-                    alert('Booking request submitted successfully!');
-                    // bookingForm.submit(); // Uncomment to actually submit
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Submitting...';
+
+                    const formData = new FormData(bookingForm);
+
+                    // --- This is the corrected URL for your Tailscale server ---
+                    fetch('https://pi-monitor.tailb72c55.ts.net/handle_booking.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        alert(data.message); // Show message from your Pi server
+                        if (data.message.includes('successfully')) {
+                           bookingForm.reset();
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Could not connect to the booking server. Please try again later.');
+                    })
+                    .finally(() => {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Submit Booking Request';
+                    });
                 }
             });
         }
-
+        
         // --- Helper Functions ---
         function validateField(input, rules) {
             let isValid = true;
             let errorMessage = '';
 
-            // 1. Check for emptiness
             if (rules.required && !input.value.trim()) {
                 isValid = false;
                 errorMessage = rules.message;
             }
-            // 2. Check pattern if not empty
             else if (rules.pattern && !rules.pattern.test(input.value)) {
                 isValid = false;
                 errorMessage = input.title || rules.message;

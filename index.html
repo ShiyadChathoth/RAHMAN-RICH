@@ -406,6 +406,17 @@
         border-radius: 5px;
     }
 }
+            @media (max-height: 450px) and (orientation: landscape) {
+    .navbar ul.active {
+        /* Calculates the max height for the menu: 100% of the viewport 
+           height minus the 70px height of the top navigation bar.
+        */
+        max-height: calc(100vh - 70px);
+
+        /* Add a vertical scrollbar ONLY if the content overflows */
+        overflow-y: auto;
+    }
+}
         
 
             .navbar ul.active {

@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdul Rahman (Rahman Rich) | Empowerment Trainer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* --- General & Global Styles --- */
+        :root {
+            --primary-color: #0a2d57; /* Dark Blue */
+            --secondary-color: #f4f7fa; /* Light Grey Background */
+            --accent-color: #d4a017; /* Gold */
+            --text-dark: #333;
+            --text-light: #fff;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Lato', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background: var(--accent-color);
+            color: var(--text-light);
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #b88a0f;
+        }
+
+        /* --- Header & Navigation --- */
+        .header {
+            background: var(--text-light);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .navbar .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar ul li a {
+            color: var(--primary-color);
+            padding: 1rem;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .navbar ul li a:hover, .navbar ul li a.active {
+            color: var(--accent-color);
+        }
+
+        .navbar .cta-button a {
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            margin-left: 1rem;
+        }
+        .navbar .cta-button a:hover {
+            background-color: #b88a0f;
+            color: var(--text-light);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        /* --- Hero Section --- */
+        #home {
+            height: 100vh;
+            background: linear-gradient(rgba(10, 45, 87, 0.7), rgba(10, 45, 87, 0.7)), url('https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2070&auto=format&fit=crop'); /* <<<--- REPLACE THIS IMAGE */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--text-light);
+            padding: 0 1rem;
+        }
+
+        #home h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        #home h3 {
+            font-size: 1.8rem;
+            font-family: var(--font-body);
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        #home p {
+            max-width: 600px;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        /* --- About Section --- */
+        #about .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        #about img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* --- Services Section --- */
+        #services {
+            background-color: var(--secondary-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--text-light);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+             color: var(--primary-color);
+             font-size: 1.3rem;
+        }
+
+        /* --- Experience Section --- */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            bottom: 10px;
+            width: 2px;
+            background: var(--accent-color);
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -39px;
+            top: 7px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 2px solid var(--text-light);
+        }
+
+        .timeline-item h4 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+
+        .timeline-item p {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .qualifications-list ul {
+            list-style-type: none;
+        }
+        
+        .qualifications-list li {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .qualifications-list i {
+            color: var(--accent-color);
+            margin-right: 1rem;
+        }
+        
+        /* --- Contact & Booking Section --- */
+        #contact {
+            background-color: var(--secondary-color);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            background: var(--text-light);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .booking-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .booking-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* NEW CSS RULE FOR RED ASTERISK */
+        .required {
+            color: red;
+            margin-left: 3px;
+        }
+        
+        .booking-form input, .booking-form textarea, .booking-form select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+        }
+        
+        .booking-form button {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            background: var(--primary-color);
+            color: var(--text-light);
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .booking-form button:hover {
+            background: #071f3d;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary-color);
+        }
+        
+        .contact-info p {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info i {
+            color: var(--primary-color);
+            margin-right: 1rem;
+            margin-top: 5px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+        
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+             .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--text-light);
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+
+            .navbar ul.active {
+                display: flex;
+            }
+            
+            .navbar ul li {
+                text-align: center;
+                width: 100%;
+            }
+            
+            .navbar ul li a {
+                padding: 1rem;
+                display: block;
+            }
+            
+            .navbar .cta-button a {
+                background-color: transparent;
+                color: var(--primary-color);
+                padding: 1rem;
+                margin-left: 0;
+                border-radius: 0;
+            }
+
+            .navbar .cta-button a:hover {
+                 background-color: transparent;
+                 color: var(--accent-color);
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            #home h1 {
+                font-size: 2.5rem;
+            }
+
+            #home h3 {
+                font-size: 1.2rem;
+            }
+
+            #about .about-content,
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #about .about-content img {
+                margin: 0 auto 2rem auto;
+                display: block;
+            }
+
+            .contact-grid {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar container">
+            <a href="#home" class="logo">RAHMAN RICH</a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="cta-button"><a href="#contact">Book a Session</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Abdul Rahman</h1>
+        <h3>Empowerment Trainer | Motivational Speaker | Counselor</h3>
+        <p>Over 18 years of experience in transforming lives through engaging, interactive, and practical workshops designed to deliver a renewed sense of purpose.</p>
+        <a href="#services" class="btn">Explore My Workshops</a>
+    </section>
+
+    <section id="about" class="container">
+        <h2>Meet Abdul Rahman</h2>
+        <div class="about-content">
+            <img src="/home/shiyad/RICH_WEBSITES/assets/Photos/007.jpg" alt="Abdul Rahman Profile Picture"> <div>
+                <h3>My Journey in Empowerment</h3>
+                <p>With a passion for unlocking human potential and a rich career spanning over 18 years, I have dedicated myself to empowering individuals and organizations. My journey has taken me from counseling units in Thrissur to directing RICH, all with one goal: to provide practical strategies that foster a renewed sense of purpose.</p>
+                <p>I believe in interactive sessions that don't just teach, but inspire genuine change. My work with esteemed organizations like KRSMA and IAME has reinforced my commitment to delivering valuable insights that resonate long after the workshop is over.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>How I Can Help</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Parenting Empowerment</h3>
+                    <p>Navigate the challenges of modern parenting with proven strategies for building stronger, healthier family relationships.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Teachers' Empowerment</h3>
+                    <p>Equipping educators with the tools and motivation to create inspiring and effective learning environments.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Student Motivation</h3>
+                    <p>Igniting a passion for learning in students, helping them overcome obstacles and achieve their academic and personal goals.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Family Management</h3>
+                    <p>Providing counseling and practical advice to foster harmony, communication, and resilience within the family unit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="container">
+         <h2>My Journey & Credentials</h2>
+         <div class="experience-grid">
+             <div>
+                 <h3>Work Experience</h3>
+                 <div class="timeline">
+                     <div class="timeline-item">
+                         <h4>Director of RICH & Principal</h4>
+                         <p>Hidayath English High School, Pappinissery (Currently)</p>
+                     </div>
+                     <div class="timeline-item">
+                         <h4>Counselor & Trainer</h4>
+                         <p>Insight Counseling Unit, Thrissur (8 years)</p>
+                     </div>
+                      <div class="timeline-item">
+                         <h4>Trainer</h4>
+                         <p>IAME Calicut (3 years)</p>
+                     </div>
+                     <div class="timeline-item">
+                         <h4>Trainer</h4>
+                         <p>CIGI (3 years)</p>
+                     </div>
+                 </div>
+             </div>
+             <div class="qualifications-list">
+                 <h3>Education & Qualifications</h3>
+                 <ul>
+                    <li><i class="fas fa-graduation-cap"></i>Master of Arts (MA) in Economics</li>
+                    <li><i class="fas fa-graduation-cap"></i>Bachelor of Education (B.Ed) in Social Science</li>
+                    <li><i class="fas fa-graduation-cap"></i>Postgraduate Diploma in Counseling Psychology</li>
+                 </ul>
+             </div>
+         </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact & Booking</h2>
+            <div class="contact-grid">
+                <div class="booking-form">
+                    <h3>Send a Booking Request</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="org-name">Name and Address of the School / Organization<span class="required">*</span></label>
+                            <textarea id="org-name" name="organization" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="head-name">Name of Contact Person<span class="required">*</span></label>
+                            <input type="text" id="head-name" name="headName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="designation">Designation<span class="required">*</span></label>
+                            <input type="text" id="designation" name="designation" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone no<span class="required">*</span>:</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp">What's app no<span class="required">*</span>:</label>
+                            <input type="tel" id="whatsapp" name="whatsapp" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service-required">Service Required<span class="required">*</span></label>
+                            <select id="service-required" name="service" required>
+                                <option value="" disabled selected>-- Select a Service --</option>
+                                <option value="parenting">Parenting Empowerment</option>
+                                <option value="teachers">Teachers' Empowerment</option>
+                                <option value="student">Student Motivation</option>
+                                <option value="family">Family Management</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="topic-preferred">Topic which you prefered<span class="required">*</span></label>
+                            <select id="topic-preferred" name="topic" required disabled>
+                                <option value="" disabled selected>-- First select a service --</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">Submit Booking Request</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Direct Contact Details</h3>
+                    <p><i class="fas fa-phone"></i>+91 9497296349</p>
+                    <p><i class="fab fa-whatsapp"></i> +91 9497296349</p>
+                    <p><i class="fas fa-envelope"></i>rahmanrichvengad@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> CK. Abdul Rahman<br>Director of RICH<br>PO. VENGAD, Kannur Dist.<br>PIN: 670612, Kerala</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Abdul Rahman. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Mobile Navigation Menu Toggle ---
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav-link, .cta-button a').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+
+        // --- Active Link Highlighting on Scroll ---
+        const sections = document.querySelectorAll('section');
+        const navLi = document.querySelectorAll('.nav-menu li a');
+
+        window.addEventListener('scroll', ()=> {
+            let current = '';
+            sections.forEach( section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            })
+            
+            navLi.forEach( a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href').includes(current)) {
+                    a.classList.add('active');
+                }
+            })
+        });
+
+        // --- Dynamic Topic Dropdown for Booking Form ---
+        const serviceSelect = document.getElementById('service-required');
+        const topicSelect = document.getElementById('topic-preferred');
+
+        const topics = {
+            parenting: [
+                "Effective Communication with Teens",
+                "Positive Discipline Techniques",
+                "Building Resilience in Children",
+                "Digital Parenting in the 21st Century"
+            ],
+            teachers: [
+                "Advanced Classroom Management",
+                "Motivating Underachieving Students",
+                "Preventing Teacher Burnout",
+                "Integrating Technology in the Classroom"
+            ],
+            student: [
+                "Goal Setting & Lifelong Achievement",
+                "Overcoming Exam Anxiety",
+                "Developing a Growth Mindset",
+                "Leadership Skills for Young Adults"
+            ],
+            family: [
+                "Conflict Resolution Strategies",
+                "Effective Family Budgeting",
+                "Balancing Work and Family Life",
+                "Strengthening Family Bonds"
+            ]
+        };
+
+        serviceSelect.addEventListener('change', (e) => {
+            const selectedService = e.target.value;
+            topicSelect.innerHTML = '<option value="" disabled selected>-- Select a Topic --</option>';
+            if (selectedService) {
+                topicSelect.disabled = false;
+                const relevantTopics = topics[selectedService];
+                relevantTopics.forEach(topic => {
+                    const option = document.createElement('option');
+                    option.value = topic.toLowerCase().replace(/ /g, '-');
+                    option.textContent = topic;
+                    topicSelect.appendChild(option);
+                });
+            } else {
+                topicSelect.disabled = true;
+            }
+        });
+
+    </script>
+
+</body>
+</html>

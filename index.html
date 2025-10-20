@@ -398,26 +398,21 @@
                 background: var(--text-light);
                 box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             }
-@media (max-width: 480px) {
-    .booking-form {
-        overflow-x: auto; /* This creates the scrollbar when needed */
-        padding: 1rem;    /* Adds some space so the form doesn't touch the edges */
-        background: #fdfdfd; /* Optional: A slightly different background to show the scroll area */
-        border-radius: 5px;
-    }
-}
-            @media (max-height: 450px) and (orientation: landscape) {
+/* --- Makes the mobile menu scrollable on short screens (landscape) --- */
+@media (max-height: 450px) and (orientation: landscape) {
     .navbar ul.active {
-        /* Calculates the max height for the menu: 100% of the viewport 
-           height minus the 70px height of the top navigation bar.
-        */
         max-height: calc(100vh - 70px);
-
-        /* Add a vertical scrollbar ONLY if the content overflows */
         overflow-y: auto;
     }
-}
-        
+
+    /* --- ADD THIS NEW RULE TO FIX THE HERO SECTION --- */
+    #home {
+        height: auto; /* Let the content define the height */
+        min-height: 100vh; /* Make it AT LEAST the height of the screen */
+        padding-top: 100px;  /* Add space to push content below the header */
+        padding-bottom: 40px; /* Add some space at the bottom */
+    }
+}     
 
             .navbar ul.active {
                 display: flex;

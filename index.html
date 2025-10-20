@@ -472,6 +472,23 @@
                 padding-bottom: 40px;
             }
         }
+        .error-message {
+    color: #d93025; /* Red color for error text */
+    font-size: 0.8rem;
+    margin-top: 4px;
+    display: none; /* Hidden by default */
+}
+
+/* This class will be added by JavaScript to show the message */
+.error-message.visible {
+    display: block;
+}
+
+/* This class will be added to highlight the invalid input field */
+input.invalid, textarea.invalid, select.invalid {
+    border-color: #d93025; /* Red border for the invalid field */
+    border-width: 2px;
+}
     </style>
 </head>
 <body>
@@ -586,55 +603,62 @@
         <div class="container">
             <h2>Contact & Booking</h2>
             <div class="contact-grid">
-                <div class="booking-form">
-                    <h3>Send a Booking Request</h3>
-                    <form>
-                        <div class="form-group">
-                            <label for="org-name">Name and Address of the School / Organization<span class="required">*</span></label>
-                            <textarea id="org-name" name="organization" rows="3" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="head-name">Name of Contact Person<span class="required">*</span></label>
-                            <input type="text" id="head-name" name="headName" required>
-                        </div>
+<div class="booking-form">
+    <h3>Send a Booking Request</h3>
+    <form id="bookingForm" novalidate>
+        <div class="form-group">
+            <label for="org-name">Name and Address of the School / Organization<span class="required">*</span></label>
+            <textarea id="org-name" name="organization" rows="3" required></textarea>
+            <div class="error-message"></div>
+        </div>
 
-                        <div class="form-group">
-                            <label for="designation">Designation<span class="required">*</span></label>
-                            <input type="text" id="designation" name="designation" required>
-                        </div>
+        <div class="form-group">
+            <label for="head-name">Name of Contact Person<span class="required">*</span></label>
+            <input type="text" id="head-name" name="headName" pattern="[a-zA-Z\s]+" title="Please enter a valid name (letters and spaces only)" required>
+            <div class="error-message"></div>
+        </div>
 
-                        <div class="form-group">
-                            <label for="phone">Phone no<span class="required">*</span>:</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="whatsapp">What's app no<span class="required">*</span>:</label>
-                            <input type="tel" id="whatsapp" name="whatsapp" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="service-required">Service Required<span class="required">*</span></label>
-                            <select id="service-required" name="service" required>
-                                <option value="" disabled selected>-- Select a Service --</option>
-                                <option value="parenting">Parenting Empowerment</option>
-                                <option value="teachers">Teachers' Empowerment</option>
-                                <option value="student">Student Motivation</option>
-                                <option value="family">Family Management</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="topic-preferred">Topic which you prefered<span class="required">*</span></label>
-                            <select id="topic-preferred" name="topic" required disabled>
-                                <option value="" disabled selected>-- First select a service --</option>
-                            </select>
-                        </div>
-<div class="form-group">
-    <label for="medium">Medium<span class="required">*</span></label>
-    <select id="medium" name="medium" required>
-        <option value="malayalam" selected>MALAYALAM</option>
-    </select>
-</div>                  
-                        <button type="submit" class="btn">Submit Booking Request</button>
-                    </form>
+        <div class="form-group">
+            <label for="designation">Designation<span class="required">*</span></label>
+            <input type="text" id="designation" name="designation" pattern="[a-zA-Z\s]+" title="Please enter a valid designation (letters and spaces only)" required>
+            <div class="error-message"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone No<span class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" pattern="\d{10}" maxlength="10" title="Please enter a 10-digit phone number" required>
+            <div class="error-message"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="whatsapp">WhatsApp No<span class="required">*</span></label>
+            <input type="tel" id="whatsapp" name="whatsapp" pattern="\d{10}" maxlength="10" title="Please enter a 10-digit WhatsApp number" required>
+            <div class="error-message"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="service-required">Service Required<span class="required">*</span></label>
+            <select id="service-required" name="service" required>
+                <option value="" disabled selected>-- Select a Service --</option>
+                <option value="parenting">Parenting Empowerment</option>
+                <option value="teachers">Teachers' Empowerment</option>
+                <option value="student">Student Motivation</option>
+                <option value="family">Family Management</option>
+            </select>
+            <div class="error-message"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="topic-preferred">Preferred Topic<span class="required">*</span></label>
+            <select id="topic-preferred" name="topic" required disabled>
+                <option value="" disabled selected>-- First select a service --</option>
+            </select>
+            <div class="error-message"></div>
+        </div>
+        
+        <button type="submit" class="btn">Submit Booking Request</button>
+    </form>
+</div>
                 </div>
                 <div class="contact-info">
                     <h3>Direct Contact Details</h3>
@@ -740,6 +764,98 @@
         });
 
     </script>
+<script>
+    // --- Advanced REAL-TIME Form Validation Script ---
+    document.addEventListener('DOMContentLoaded', function() {
+        const bookingForm = document.getElementById('bookingForm');
 
+        // --- Field Definitions ---
+        // We define all fields and their rules in one place for easy management.
+        const fieldsToValidate = [
+            { id: 'org-name', required: true, message: 'This field is required.' },
+            { id: 'head-name', required: true, pattern: /^[a-zA-Z\s]+$/, message: 'Please enter a valid name (letters only).' },
+            { id: 'designation', required: true, pattern: /^[a-zA-Z\s]+$/, message: 'Please enter a valid designation (letters only).' },
+            { id: 'phone', required: true, pattern: /^\d{10}$/, message: 'Please enter a 10-digit phone number.' },
+            { id: 'whatsapp', required: true, pattern: /^\d{10}$/, message: 'Please enter a 10-digit WhatsApp number.' },
+            { id: 'service-required', required: true, message: 'Please select a service.' },
+            { id: 'topic-preferred', required: true, message: 'Please select a topic.' }
+        ];
+
+        // --- Attach Real-Time Listeners ---
+        fieldsToValidate.forEach(field => {
+            const input = document.getElementById(field.id);
+            if (input) {
+                // 'input' event for text fields, 'change' for dropdowns
+                const eventType = (input.tagName.toLowerCase() === 'select') ? 'change' : 'input';
+                input.addEventListener(eventType, () => {
+                    validateField(input, field);
+                });
+            }
+        });
+
+        // --- Final Validation on Submit ---
+        if (bookingForm) {
+            bookingForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Stop the form from submitting
+                
+                let isFormValid = true;
+                fieldsToValidate.forEach(field => {
+                    const input = document.getElementById(field.id);
+                    // We re-validate every field on submit to catch any missed ones
+                    if (!input.disabled && !validateField(input, field)) {
+                        isFormValid = false;
+                    }
+                });
+
+                if (isFormValid) {
+                    alert('Booking request submitted successfully!');
+                    // bookingForm.submit(); // Uncomment to actually submit
+                }
+            });
+        }
+
+        // --- Helper Functions ---
+        function validateField(input, rules) {
+            let isValid = true;
+            let errorMessage = '';
+
+            // 1. Check for emptiness
+            if (rules.required && !input.value.trim()) {
+                isValid = false;
+                errorMessage = rules.message;
+            }
+            // 2. Check pattern if not empty
+            else if (rules.pattern && !rules.pattern.test(input.value)) {
+                isValid = false;
+                errorMessage = input.title || rules.message;
+            }
+
+            if (isValid) {
+                clearError(input);
+            } else {
+                showError(input, errorMessage);
+            }
+            return isValid;
+        }
+
+        function showError(input, message) {
+            const formGroup = input.parentElement;
+            const errorDiv = formGroup.querySelector('.error-message');
+            input.classList.add('invalid');
+            errorDiv.textContent = message;
+            errorDiv.classList.add('visible');
+        }
+
+        function clearError(input) {
+            const formGroup = input.parentElement;
+            const errorDiv = formGroup.querySelector('.error-message');
+            input.classList.remove('invalid');
+            if (errorDiv) {
+                errorDiv.classList.remove('visible');
+                errorDiv.textContent = '';
+            }
+        }
+    });
+</script>
 </body>
 </html>

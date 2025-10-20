@@ -139,7 +139,7 @@
         /* --- Hero Section --- */
         #home {
             height: 100vh;
-            background: linear-gradient(rgba(10, 45, 87, 0.7), rgba(10, 45, 87, 0.7)), url('/assets/Photos/home_bg.jpeg'); /* <<<--- REPLACE THIS IMAGE */
+            background: linear-gradient(rgba(10, 45, 87, 0.7), rgba(10, 45, 87, 0.7)), url('/assets/Photos/home_bg.jpeg');
             background-size: cover;
             background-position: left;
             display: flex;
@@ -150,12 +150,6 @@
             color: var(--text-light);
             padding: 0 1rem;
         }
-               @media (max-width: 768px) {
-    #home {
-        /* This position is for narrow screens */
-        background-position: left -80px center;
-    }
-}
 
         #home h1 {
             font-size: 3.5rem;
@@ -317,7 +311,6 @@
             color: var(--primary-color);
         }
 
-        /* NEW CSS RULE FOR RED ASTERISK */
         .required {
             color: red;
             margin-left: 3px;
@@ -330,6 +323,7 @@
             border-radius: 5px;
             font-family: var(--font-body);
             font-size: 1rem;
+            box-sizing: border-box;
         }
         
         .booking-form button {
@@ -388,6 +382,10 @@
                 font-size: 2rem;
             }
             
+            #home {
+                background-position: left -80px center;
+            }
+            
             .navbar ul {
                 display: none;
                 flex-direction: column;
@@ -398,21 +396,6 @@
                 background: var(--text-light);
                 box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             }
-/* --- Makes the mobile menu scrollable on short screens (landscape) --- */
-@media (max-height: 450px) and (orientation: landscape) {
-    .navbar ul.active {
-        max-height: calc(100vh - 70px);
-        overflow-y: auto;
-    }
-
-    /* --- ADD THIS NEW RULE TO FIX THE HERO SECTION --- */
-    #home {
-        height: auto; /* Let the content define the height */
-        min-height: 100vh; /* Make it AT LEAST the height of the screen */
-        padding-top: 100px;  /* Add space to push content below the header */
-        padding-bottom: 40px; /* Add some space at the bottom */
-    }
-}     
 
             .navbar ul.active {
                 display: flex;
@@ -466,6 +449,28 @@
             .contact-grid {
                 padding: 2rem;
             }
+
+            .booking-form {
+                overflow-x: auto;
+                padding: 1rem;
+                background: #fdfdfd;
+                border-radius: 5px;
+            }
+        }
+
+        /* --- Makes the mobile menu scrollable on short screens (landscape) --- */
+        @media (max-height: 450px) and (orientation: landscape) {
+            .navbar ul.active {
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
+            }
+
+            #home {
+                height: auto;
+                min-height: 100vh;
+                padding-top: 100px;
+                padding-bottom: 40px;
+            }
         }
     </style>
 </head>
@@ -498,7 +503,8 @@
     <section id="about" class="container">
         <h2>Meet Abdul Rahman</h2>
         <div class="about-content">
-            <img src="/assets/Photos/007.jpg" alt="Abdul Rahman Profile Picture"> <div>
+            <img src="/assets/Photos/007.jpg" alt="Abdul Rahman Profile Picture"> 
+            <div>
                 <h3>My Journey in Empowerment</h3>
                 <p>With a passion for unlocking human potential and a rich career spanning over 18 years, I have dedicated myself to empowering individuals and organizations. My journey has taken me from counseling units in Thrissur to directing RICH, all with one goal: to provide practical strategies that foster a renewed sense of purpose.</p>
                 <p>I believe in interactive sessions that don't just teach, but inspire genuine change. My work with esteemed organizations like KRSMA and IAME has reinforced my commitment to delivering valuable insights that resonate long after the workshop is over.</p>

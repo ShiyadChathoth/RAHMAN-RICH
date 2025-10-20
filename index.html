@@ -141,7 +141,7 @@
             height: 100vh;
             background: linear-gradient(rgba(10, 45, 87, 0.7), rgba(10, 45, 87, 0.7)), url('/home/shiyad/RICH_WEBSITES/assets/Photos/home_bg.jpeg'); /* <<<--- REPLACE THIS IMAGE */
             background-size: cover;
-            background-position: center;
+            background-position: left;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -150,6 +150,12 @@
             color: var(--text-light);
             padding: 0 1rem;
         }
+        @media (max-width: 768px) {
+    #home {
+        /* This position is for narrow screens */
+        background-position: left -70px center;
+    }
+}
 
         #home h1 {
             font-size: 3.5rem;
@@ -299,7 +305,7 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-
+        
         .booking-form .form-group {
             margin-bottom: 1.5rem;
         }
@@ -381,6 +387,29 @@
             h2 {
                 font-size: 2rem;
             }
+            /* --- Specific Fix for Narrow Phone Screens --- */
+/* --- Specific Fix for Narrow Phone Screens --- */
+@media (max-width: 480px) {
+    .contact-grid {
+        padding: 1.5rem 1rem;
+    }
+
+    #contact {
+        padding: 3rem 0;
+    }
+
+    /* --- ADD THIS NEW RULE FOR LABELS --- */
+    .booking-form label {
+        font-size: 0.9rem;
+    }
+    
+    .booking-form input,
+    .booking-form textarea,
+    .booking-form select {
+        padding: 0.7rem;
+        font-size: 0.9rem;
+    }
+}
             
             .navbar ul {
                 display: none;

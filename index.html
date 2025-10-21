@@ -800,47 +800,47 @@ input.invalid, textarea.invalid, select.invalid {
 
 
         // --- Final Validation and AJAX Submission to your Pi Server ---
-        if (bookingForm) {
-            bookingForm.addEventListener('submit', function(event) {
-                event.preventDefault(); // Stop the form from submitting
+if (bookingForm) {
+    bookingForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Stop the form from submitting
 
-                let isFormValid = true;
-                fieldsToValidate.forEach(field => {
-                    const input = document.getElementById(field.id);
-                    if (!input.disabled && !validateField(input, field)) {
-                        isFormValid = false;
-                    }
-                });
+        let isFormValid = true;
+        fieldsToValidate.forEach(field => {
+            const input = document.getElementById(field.id);
+            if (!input.disabled && !validateField(input, field)) {
+                isFormValid = false;
+            }
+        });
 
-                if (isFormValid) {
-                    submitButton.disabled = true;
-                    submitButton.textContent = 'Submitting...';
+        if (isFormValid) {
+            submitButton.disabled = true;
+            submitButton.textContent = 'Submitting...';
 
-                    const formData = new FormData(bookingForm);
+            const formData = new FormData(bookingForm);
 
-                    // --- This is the corrected URL for your Tailscale server ---
-                    fetch('https://pi-monitor.tailb72c55.ts.net/handle_booking.php', {
-                        method: 'POST',
-                        body: formData
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        alert(data.message); // Show message from your Pi server
-                        if (data.message.includes('successfully')) {
-                           bookingForm.reset();
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        alert('Could not connect to the booking server. Please try again later.');
-                    })
-                    .finally(() => {
-                        submitButton.disabled = false;
-                        submitButton.textContent = 'Submit Booking Request';
-                    });
+            // --- This is the corrected URL for your Tailscale server ---
+            fetch('https://pi-monitor.tailb72c55.ts.net/booking', { // Or 'http://localhost:3000/webhook' for local testing
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message); // Show message from your server
+                if (data.message.includes('successfully')) {
+                   bookingForm.reset();
                 }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Could not connect to the booking server. Please try again later.');
+            })
+            .finally(() => {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Submit Booking Request';
             });
         }
+    });
+}
         
         // --- Helper Functions ---
         function validateField(input, rules) {

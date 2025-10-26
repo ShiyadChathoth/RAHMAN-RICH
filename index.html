@@ -1127,7 +1127,7 @@ input.invalid, textarea.invalid, select.invalid {
             }
         });
 
-        if (bookingForm) {
+  if (bookingForm) {
             bookingForm.addEventListener('submit', function(event) {
                 event.preventDefault(); 
 
@@ -1144,8 +1144,8 @@ input.invalid, textarea.invalid, select.invalid {
                     submitButton.textContent = 'Submitting...';
                     const formData = new FormData(bookingForm);
 
-                    // --- This is the correct URL for your Vercel API ---
-                    fetch('/booking', { 
+                    // --- THIS URL IS NOW UPDATED AS YOU REQUESTED ---
+                    fetch('https://pi-monitor.tailb72c55.ts.net/booking', { 
                         method: 'POST',
                         body: formData
                     })

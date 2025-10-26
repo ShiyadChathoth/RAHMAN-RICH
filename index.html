@@ -172,7 +172,7 @@
 
         /* --- MODIFIED: Hero Section Animations --- */
 
-        /* Background slideshow animation (Unchanged) */
+        /* Background slideshow animation */
         @keyframes changeBg {
             0%, 100% {
                 background-image: linear-gradient(rgba(10, 45, 87, 0.7), rgba(10, 45, 87, 0.7)), url('/assets/Photos/home_bg.jpeg');
@@ -185,88 +185,86 @@
             }
         }
 
-        /* --- REMOVED: Old fadeInContent keyframes --- */
 
-        /* --- ADDED: 4 new keyframes for staggered, looping content --- */
+        /* --- 4 keyframes with built-in delays to fade out and in --- */
         
-        /* H1 Animation (Delay 1: ~1.0s) */
+        /* H1 Animation (Delay 1) */
         @keyframes cycle-h1 {
-            /* Slide 1 */
-            0%, 5% { opacity: 0; transform: translateY(30px); }
-            10% { opacity: 1; transform: translateY(0); } /* Fade in */
+            /* Slide 1: Fades in after ~2.1s */
+            0%, 10% { opacity: 0; transform: translateY(30px); }
+            15% { opacity: 1; transform: translateY(0); } /* Fade in */
             30% { opacity: 1; transform: translateY(0); } /* Hold */
             33% { opacity: 0; transform: translateY(-30px); } /* Fade out */
-            /* Slide 2 */
-            33.01%, 38% { opacity: 0; transform: translateY(30px); } /* 33 + 5 */
-            43% { opacity: 1; transform: translateY(0); } /* 33 + 10 */
+            /* Slide 2: Fades in after new BG (33%) + ~2.1s delay */
+            33.01%, 43% { opacity: 0; transform: translateY(30px); } /* 33 + 10 */
+            48% { opacity: 1; transform: translateY(0); } /* 33 + 15 */
             63% { opacity: 1; transform: translateY(0); } /* Hold */
             66% { opacity: 0; transform: translateY(-30px); } /* Fade out */
-            /* Slide 3 */
-            66.01%, 71% { opacity: 0; transform: translateY(30px); } /* 66 + 5 */
-            76% { opacity: 1; transform: translateY(0); } /* 66 + 10 */
+            /* Slide 3: Fades in after new BG (66%) + ~2.1s delay */
+            66.01%, 76% { opacity: 0; transform: translateY(30px); } /* 66 + 10 */
+            81% { opacity: 1; transform: translateY(0); } /* 66 + 15 */
             97% { opacity: 1; transform: translateY(0); } /* Hold */
             100% { opacity: 0; transform: translateY(-30px); } /* Fade out */
         }
 
-        /* H3 Animation (Delay 2: ~1.5s) */
+        /* H3 Animation (Delay 2) */
         @keyframes cycle-h3 {
-            /* Slide 1 */
-            0%, 7% { opacity: 0; transform: translateY(30px); }
-            12% { opacity: 1; transform: translateY(0); } /* Fade in */
+            /* Slide 1: Fades in after ~2.5s */
+            0%, 12% { opacity: 0; transform: translateY(30px); }
+            17% { opacity: 1; transform: translateY(0); } /* Fade in */
             30% { opacity: 1; transform: translateY(0); } /* Hold */
             33% { opacity: 0; transform: translateY(-30px); } /* Fade out */
-            /* Slide 2 */
-            33.01%, 40% { opacity: 0; transform: translateY(30px); } /* 33 + 7 */
-            45% { opacity: 1; transform: translateY(0); } /* 33 + 12 */
+            /* Slide 2: Fades in after new BG (33%) + ~2.5s delay */
+            33.01%, 45% { opacity: 0; transform: translateY(30px); } /* 33 + 12 */
+            50% { opacity: 1; transform: translateY(0); } /* 33 + 17 */
             63% { opacity: 1; transform: translateY(0); } /* Hold */
             66% { opacity: 0; transform: translateY(-30px); } /* Fade out */
-            /* Slide 3 */
-            66.01%, 73% { opacity: 0; transform: translateY(30px); } /* 66 + 7 */
-            78% { opacity: 1; transform: translateY(0); } /* 66 + 12 */
+            /* Slide 3: Fades in after new BG (66%) + ~2.5s delay */
+            66.01%, 78% { opacity: 0; transform: translateY(30px); } /* 66 + 12 */
+            83% { opacity: 1; transform: translateY(0); } /* 66 + 17 */
             97% { opacity: 1; transform: translateY(0); } /* Hold */
             100% { opacity: 0; transform: translateY(-30px); } /* Fade out */
         }
 
-        /* P Animation (Delay 3: ~1.9s) */
+        /* P Animation (Delay 3) */
         @keyframes cycle-p {
-            /* Slide 1 */
-            0%, 9% { opacity: 0; transform: translateY(30px); }
-            14% { opacity: 1; transform: translateY(0); } /* Fade in */
+            /* Slide 1: Fades in after ~2.9s */
+            0%, 14% { opacity: 0; transform: translateY(30px); }
+            19% { opacity: 1; transform: translateY(0); } /* Fade in */
             30% { opacity: 1; transform: translateY(0); } /* Hold */
             33% { opacity: 0; transform: translateY(-30px); } /* Fade out */
-            /* Slide 2 */
-            33.01%, 42% { opacity: 0; transform: translateY(30px); } /* 33 + 9 */
-            47% { opacity: 1; transform: translateY(0); } /* 33 + 14 */
+            /* Slide 2: Fades in after new BG (33%) + ~2.9s delay */
+            33.01%, 47% { opacity: 0; transform: translateY(30px); } /* 33 + 14 */
+            52% { opacity: 1; transform: translateY(0); } /* 33 + 19 */
             63% { opacity: 1; transform: translateY(0); } /* Hold */
             66% { opacity: 0; transform: translateY(-30px); } /* Fade out */
-            /* Slide 3 */
-            66.01%, 75% { opacity: 0; transform: translateY(30px); } /* 66 + 9 */
-            80% { opacity: 1; transform: translateY(0); } /* 66 + 14 */
+            /* Slide 3: Fades in after new BG (66%) + ~2.9s delay */
+            66.01%, 80% { opacity: 0; transform: translateY(30px); } /* 66 + 14 */
+            85% { opacity: 1; transform: translateY(0); } /* 66 + 19 */
             97% { opacity: 1; transform: translateY(0); } /* Hold */
             100% { opacity: 0; transform: translateY(-30px); } /* Fade out */
         }
 
-        /* Button Animation (Delay 4: ~2.3s) */
+        /* Button Animation (Delay 4) */
         @keyframes cycle-btn {
-            /* Slide 1 */
-            0%, 11% { opacity: 0; transform: translateY(30px); }
-            16% { opacity: 1; transform: translateY(0); } /* Fade in */
+            /* Slide 1: Fades in after ~3.3s */
+            0%, 16% { opacity: 0; transform: translateY(30px); }
+            21% { opacity: 1; transform: translateY(0); } /* Fade in */
             30% { opacity: 1; transform: translateY(0); } /* Hold */
             33% { opacity: 0; transform: translateY(-30px); } /* Fade out */
-            /* Slide 2 */
-            33.01%, 44% { opacity: 0; transform: translateY(30px); } /* 33 + 11 */
-            49% { opacity: 1; transform: translateY(0); } /* 33 + 16 */
+            /* Slide 2: Fades in after new BG (33%) + ~3.3s delay */
+            33.01%, 49% { opacity: 0; transform: translateY(30px); } /* 33 + 16 */
+            54% { opacity: 1; transform: translateY(0); } /* 33 + 21 */
             63% { opacity: 1; transform: translateY(0); } /* Hold */
             66% { opacity: 0; transform: translateY(-30px); } /* Fade out */
-            /* Slide 3 */
-            66.01%, 77% { opacity: 0; transform: translateY(30px); } /* 66 + 11 */
-            82% { opacity: 1; transform: translateY(0); } /* 66 + 16 */
+            /* Slide 3: Fades in after new BG (66%) + ~3.3s delay */
+            66.01%, 82% { opacity: 0; transform: translateY(30px); } /* 66 + 16 */
+            87% { opacity: 1; transform: translateY(0); } /* 66 + 21 */
             97% { opacity: 1; transform: translateY(0); } /* Hold */
             100% { opacity: 0; transform: translateY(-30px); } /* Fade out */
         }
 
 
-        /* --- REPLACED: Old animation rules --- */
         /* Apply new looping, staggered animations */
         #home h1 {
             animation: cycle-h1 21s infinite ease-in-out;
@@ -803,7 +801,7 @@ input.invalid, textarea.invalid, select.invalid {
                 <div class="contact-info">
                     <h3>Direct Contact Details</h3>
                     <p><i class="fas fa-phone"></i>+91 9497296349</p>
-                    <p><i class="fab fa-whatsapp"></i> +91 9497296349</p>
+                    <p><i class="fab fa-whatsapp"></i> +9Click 9497296349</p>
                     <p><i class="fas fa-envelope"></i>rahmanrichvengad@gmail.com</p>
                     <p><i class="fas fa-map-marker-alt"></i>Abdul Rahman Vengad<br>Director of RICH<br>PO. VENGAD, Kannur Dist.<br>PIN: 670612, Kerala</p>
                 </div>
@@ -1001,7 +999,7 @@ if (bookingForm) {
         function validateField(input, rules) {
             let isValid = true;
             let errorMessage = '';
-            const value = input.value.trim();
+            const value = input.val();
 
             if (rules.required && !value) {
                 isValid = false;

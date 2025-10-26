@@ -139,7 +139,6 @@
         /* --- Hero Section --- */
         #home {
             height: 100vh;
-            /* MODIFICATION: Updated animation to 63s */
             animation: changeBg 63s infinite ease-in-out;
             background-size: cover;
             background-position: center; 
@@ -171,7 +170,7 @@
             font-size: 1.1rem;
         }
 
-        /* --- MODIFIED: Background Slideshow (9 images) --- */
+        /* --- Background Slideshow (9 images) --- */
         @keyframes changeBg {
             0%, 100% {
                 background-image: linear-gradient(rgba(10, 45, 87, 0.7), rgba(10, 45, 87, 0.7)), url('/assets/Photos/s1.png');
@@ -202,205 +201,53 @@
             }
         }
 
-        /* --- REWRITTEN: 4 new keyframes for 63s loop --- */
-        /* Each block is 11.11%. Delays are ~2.1s, 2.5s, 2.9s, 3.3s */
-        /* 2.1s delay = 3.33%. 2.5s = 3.96%. 2.9s = 4.6%. 3.3s = 5.23% */
-        /* Fade-in = 0.63%. Quick Fade-out = 0.31% */
-        
+        /* --- Text Cycle Keyframes for 63s loop --- */
         @keyframes cycle-h1 {
-            /* S1 */
-            0%, 3.33% { opacity: 0; transform: translateY(30px); }
-            3.96% { opacity: 1; transform: translateY(0); }
-            10.8% { opacity: 1; transform: translateY(0); }
-            11.11% { opacity: 0; transform: translateY(-30px); }
-            /* S2 */
-            11.12%, 14.44% { opacity: 0; transform: translateY(30px); }
-            15.07% { opacity: 1; transform: translateY(0); }
-            21.91% { opacity: 1; transform: translateY(0); }
-            22.22% { opacity: 0; transform: translateY(-30px); }
-            /* S3 */
-            22.23%, 25.55% { opacity: 0; transform: translateY(30px); }
-            26.18% { opacity: 1; transform: translateY(0); }
-            33.02% { opacity: 1; transform: translateY(0); }
-            33.33% { opacity: 0; transform: translateY(-30px); }
-            /* S4 */
-            33.34%, 36.66% { opacity: 0; transform: translateY(30px); }
-            37.29% { opacity: 1; transform: translateY(0); }
-            44.13% { opacity: 1; transform: translateY(0); }
-            44.44% { opacity: 0; transform: translateY(-30px); }
-            /* S5 */
-            44.45%, 47.77% { opacity: 0; transform: translateY(30px); }
-            48.40% { opacity: 1; transform: translateY(0); }
-            55.24% { opacity: 1; transform: translateY(0); }
-            55.55% { opacity: 0; transform: translateY(-30px); }
-            /* S6 */
-            55.56%, 58.88% { opacity: 0; transform: translateY(30px); }
-            59.51% { opacity: 1; transform: translateY(0); }
-            66.35% { opacity: 1; transform: translateY(0); }
-            66.66% { opacity: 0; transform: translateY(-30px); }
-            /* S7 */
-            66.67%, 69.99% { opacity: 0; transform: translateY(30px); }
-            70.62% { opacity: 1; transform: translateY(0); }
-            77.46% { opacity: 1; transform: translateY(0); }
-            77.77% { opacity: 0; transform: translateY(-30px); }
-            /* S8 */
-            77.78%, 81.10% { opacity: 0; transform: translateY(30px); }
-            81.73% { opacity: 1; transform: translateY(0); }
-            88.57% { opacity: 1; transform: translateY(0); }
-            88.88% { opacity: 0; transform: translateY(-30px); }
-            /* S9 */
-            88.89%, 92.21% { opacity: 0; transform: translateY(30px); }
-            92.84% { opacity: 1; transform: translateY(0); }
-            99.68% { opacity: 1; transform: translateY(0); }
-            100% { opacity: 0; transform: translateY(-30px); }
+            0%, 3.33% { opacity: 0; transform: translateY(30px); } 3.96% { opacity: 1; transform: translateY(0); } 10.8% { opacity: 1; transform: translateY(0); } 11.11% { opacity: 0; transform: translateY(-30px); }
+            11.12%, 14.44% { opacity: 0; transform: translateY(30px); } 15.07% { opacity: 1; transform: translateY(0); } 21.91% { opacity: 1; transform: translateY(0); } 22.22% { opacity: 0; transform: translateY(-30px); }
+            22.23%, 25.55% { opacity: 0; transform: translateY(30px); } 26.18% { opacity: 1; transform: translateY(0); } 33.02% { opacity: 1; transform: translateY(0); } 33.33% { opacity: 0; transform: translateY(-30px); }
+            33.34%, 36.66% { opacity: 0; transform: translateY(30px); } 37.29% { opacity: 1; transform: translateY(0); } 44.13% { opacity: 1; transform: translateY(0); } 44.44% { opacity: 0; transform: translateY(-30px); }
+            44.45%, 47.77% { opacity: 0; transform: translateY(30px); } 48.40% { opacity: 1; transform: translateY(0); } 55.24% { opacity: 1; transform: translateY(0); } 55.55% { opacity: 0; transform: translateY(-30px); }
+            55.56%, 58.88% { opacity: 0; transform: translateY(30px); } 59.51% { opacity: 1; transform: translateY(0); } 66.35% { opacity: 1; transform: translateY(0); } 66.66% { opacity: 0; transform: translateY(-30px); }
+            66.67%, 69.99% { opacity: 0; transform: translateY(30px); } 70.62% { opacity: 1; transform: translateY(0); } 77.46% { opacity: 1; transform: translateY(0); } 77.77% { opacity: 0; transform: translateY(-30px); }
+            77.78%, 81.10% { opacity: 0; transform: translateY(30px); } 81.73% { opacity: 1; transform: translateY(0); } 88.57% { opacity: 1; transform: translateY(0); } 88.88% { opacity: 0; transform: translateY(-30px); }
+            88.89%, 92.21% { opacity: 0; transform: translateY(30px); } 92.84% { opacity: 1; transform: translateY(0); } 99.68% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-30px); }
         }
-
         @keyframes cycle-h3 {
-            /* S1 */
-            0%, 3.96% { opacity: 0; transform: translateY(30px); }
-            4.59% { opacity: 1; transform: translateY(0); }
-            10.8% { opacity: 1; transform: translateY(0); }
-            11.11% { opacity: 0; transform: translateY(-30px); }
-            /* S2 */
-            11.12%, 15.07% { opacity: 0; transform: translateY(30px); }
-            15.70% { opacity: 1; transform: translateY(0); }
-            21.91% { opacity: 1; transform: translateY(0); }
-            22.22% { opacity: 0; transform: translateY(-30px); }
-            /* S3 */
-            22.23%, 26.18% { opacity: 0; transform: translateY(30px); }
-            26.81% { opacity: 1; transform: translateY(0); }
-            33.02% { opacity: 1; transform: translateY(0); }
-            33.33% { opacity: 0; transform: translateY(-30px); }
-            /* S4 */
-            33.34%, 37.30% { opacity: 0; transform: translateY(30px); }
-            37.93% { opacity: 1; transform: translateY(0); }
-            44.13% { opacity: 1; transform: translateY(0); }
-            44.44% { opacity: 0; transform: translateY(-30px); }
-            /* S5 */
-            44.45%, 48.41% { opacity: 0; transform: translateY(30px); }
-            49.04% { opacity: 1; transform: translateY(0); }
-            55.24% { opacity: 1; transform: translateY(0); }
-            55.55% { opacity: 0; transform: translateY(-30px); }
-            /* S6 */
-            55.56%, 59.52% { opacity: 0; transform: translateY(30px); }
-            60.15% { opacity: 1; transform: translateY(0); }
-            66.35% { opacity: 1; transform: translateY(0); }
-            66.66% { opacity: 0; transform: translateY(-30px); }
-            /* S7 */
-            66.67%, 70.63% { opacity: 0; transform: translateY(30px); }
-            71.26% { opacity: 1; transform: translateY(0); }
-            77.46% { opacity: 1; transform: translateY(0); }
-            77.77% { opacity: 0; transform: translateY(-30px); }
-            /* S8 */
-            77.78%, 81.74% { opacity: 0; transform: translateY(30px); }
-            82.37% { opacity: 1; transform: translateY(0); }
-            88.57% { opacity: 1; transform: translateY(0); }
-            88.88% { opacity: 0; transform: translateY(-30px); }
-            /* S9 */
-            88.89%, 92.85% { opacity: 0; transform: translateY(30px); }
-            93.48% { opacity: 1; transform: translateY(0); }
-            99.68% { opacity: 1; transform: translateY(0); }
-            100% { opacity: 0; transform: translateY(-30px); }
+            0%, 3.96% { opacity: 0; transform: translateY(30px); } 4.59% { opacity: 1; transform: translateY(0); } 10.8% { opacity: 1; transform: translateY(0); } 11.11% { opacity: 0; transform: translateY(-30px); }
+            11.12%, 15.07% { opacity: 0; transform: translateY(30px); } 15.70% { opacity: 1; transform: translateY(0); } 21.91% { opacity: 1; transform: translateY(0); } 22.22% { opacity: 0; transform: translateY(-30px); }
+            22.23%, 26.18% { opacity: 0; transform: translateY(30px); } 26.81% { opacity: 1; transform: translateY(0); } 33.02% { opacity: 1; transform: translateY(0); } 33.33% { opacity: 0; transform: translateY(-30px); }
+            33.34%, 37.30% { opacity: 0; transform: translateY(30px); } 37.93% { opacity: 1; transform: translateY(0); } 44.13% { opacity: 1; transform: translateY(0); } 44.44% { opacity: 0; transform: translateY(-30px); }
+            44.45%, 48.41% { opacity: 0; transform: translateY(30px); } 49.04% { opacity: 1; transform: translateY(0); } 55.24% { opacity: 1; transform: translateY(0); } 55.55% { opacity: 0; transform: translateY(-30px); }
+            55.56%, 59.52% { opacity: 0; transform: translateY(30px); } 60.15% { opacity: 1; transform: translateY(0); } 66.35% { opacity: 1; transform: translateY(0); } 66.66% { opacity: 0; transform: translateY(-30px); }
+            66.67%, 70.63% { opacity: 0; transform: translateY(30px); } 71.26% { opacity: 1; transform: translateY(0); } 77.46% { opacity: 1; transform: translateY(0); } 77.77% { opacity: 0; transform: translateY(-30px); }
+            77.78%, 81.74% { opacity: 0; transform: translateY(30px); } 82.37% { opacity: 1; transform: translateY(0); } 88.57% { opacity: 1; transform: translateY(0); } 88.88% { opacity: 0; transform: translateY(-30px); }
+            88.89%, 92.85% { opacity: 0; transform: translateY(30px); } 93.48% { opacity: 1; transform: translateY(0); } 99.68% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-30px); }
         }
-
         @keyframes cycle-p {
-            /* S1 */
-            0%, 4.6% { opacity: 0; transform: translateY(30px); }
-            5.23% { opacity: 1; transform: translateY(0); }
-            10.8% { opacity: 1; transform: translateY(0); }
-            11.11% { opacity: 0; transform: translateY(-30px); }
-            /* S2 */
-            11.12%, 15.71% { opacity: 0; transform: translateY(30px); }
-            16.34% { opacity: 1; transform: translateY(0); }
-            21.91% { opacity: 1; transform: translateY(0); }
-            22.22% { opacity: 0; transform: translateY(-30px); }
-            /* S3 */
-            22.23%, 26.82% { opacity: 0; transform: translateY(30px); }
-            27.45% { opacity: 1; transform: translateY(0); }
-            33.02% { opacity: 1; transform: translateY(0); }
-            33.33% { opacity: 0; transform: translateY(-30px); }
-            /* S4 */
-            33.34%, 37.94% { opacity: 0; transform: translateY(30px); }
-            38.57% { opacity: 1; transform: translateY(0); }
-            44.13% { opacity: 1; transform: translateY(0); }
-            44.44% { opacity: 0; transform: translateY(-30px); }
-            /* S5 */
-            44.45%, 49.05% { opacity: 0; transform: translateY(30px); }
-            49.68% { opacity: 1; transform: translateY(0); }
-            55.24% { opacity: 1; transform: translateY(0); }
-            55.55% { opacity: 0; transform: translateY(-30px); }
-            /* S6 */
-            55.56%, 60.16% { opacity: 0; transform: translateY(30px); }
-            60.79% { opacity: 1; transform: translateY(0); }
-            66.35% { opacity: 1; transform: translateY(0); }
-            66.66% { opacity: 0; transform: translateY(-30px); }
-            /* S7 */
-            66.67%, 71.27% { opacity: 0; transform: translateY(30px); }
-            71.90% { opacity: 1; transform: translateY(0); }
-            77.46% { opacity: 1; transform: translateY(0); }
-            77.77% { opacity: 0; transform: translateY(-30px); }
-            /* S8 */
-            77.78%, 82.38% { opacity: 0; transform: translateY(30px); }
-            83.01% { opacity: 1; transform: translateY(0); }
-            88.57% { opacity: 1; transform: translateY(0); }
-            88.88% { opacity: 0; transform: translateY(-30px); }
-            /* S9 */
-            88.89%, 93.49% { opacity: 0; transform: translateY(30px); }
-            94.12% { opacity: 1; transform: translateY(0); }
-            99.68% { opacity: 1; transform: translateY(0); }
-            100% { opacity: 0; transform: translateY(-30px); }
+            0%, 4.6% { opacity: 0; transform: translateY(30px); } 5.23% { opacity: 1; transform: translateY(0); } 10.8% { opacity: 1; transform: translateY(0); } 11.11% { opacity: 0; transform: translateY(-30px); }
+            11.12%, 15.71% { opacity: 0; transform: translateY(30px); } 16.34% { opacity: 1; transform: translateY(0); } 21.91% { opacity: 1; transform: translateY(0); } 22.22% { opacity: 0; transform: translateY(-30px); }
+            22.23%, 26.82% { opacity: 0; transform: translateY(30px); } 27.45% { opacity: 1; transform: translateY(0); } 33.02% { opacity: 1; transform: translateY(0); } 33.33% { opacity: 0; transform: translateY(-30px); }
+            33.34%, 37.94% { opacity: 0; transform: translateY(30px); } 38.57% { opacity: 1; transform: translateY(0); } 44.13% { opacity: 1; transform: translateY(0); } 44.44% { opacity: 0; transform: translateY(-30px); }
+            44.45%, 49.05% { opacity: 0; transform: translateY(30px); } 49.68% { opacity: 1; transform: translateY(0); } 55.24% { opacity: 1; transform: translateY(0); } 55.55% { opacity: 0; transform: translateY(-30px); }
+            55.56%, 60.16% { opacity: 0; transform: translateY(30px); } 60.79% { opacity: 1; transform: translateY(0); } 66.35% { opacity: 1; transform: translateY(0); } 66.66% { opacity: 0; transform: translateY(-30px); }
+            66.67%, 71.27% { opacity: 0; transform: translateY(30px); } 71.90% { opacity: 1; transform: translateY(0); } 77.46% { opacity: 1; transform: translateY(0); } 77.77% { opacity: 0; transform: translateY(-30px); }
+            77.78%, 82.38% { opacity: 0; transform: translateY(30px); } 83.01% { opacity: 1; transform: translateY(0); } 88.57% { opacity: 1; transform: translateY(0); } 88.88% { opacity: 0; transform: translateY(-30px); }
+            88.89%, 93.49% { opacity: 0; transform: translateY(30px); } 94.12% { opacity: 1; transform: translateY(0); } 99.68% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-30px); }
         }
-
         @keyframes cycle-btn {
-            /* S1 */
-            0%, 5.23% { opacity: 0; transform: translateY(30px); }
-            5.86% { opacity: 1; transform: translateY(0); }
-            10.8% { opacity: 1; transform: translateY(0); }
-            11.11% { opacity: 0; transform: translateY(-30px); }
-            /* S2 */
-            11.12%, 16.34% { opacity: 0; transform: translateY(30px); }
-            16.97% { opacity: 1; transform: translateY(0); }
-            21.91% { opacity: 1; transform: translateY(0); }
-            22.22% { opacity: 0; transform: translateY(-30px); }
-            /* S3 */
-            22.23%, 27.45% { opacity: 0; transform: translateY(30px); }
-            28.08% { opacity: 1; transform: translateY(0); }
-            33.02% { opacity: 1; transform: translateY(0); }
-            33.33% { opacity: 0; transform: translateY(-30px); }
-            /* S4 */
-            33.34%, 38.57% { opacity: 0; transform: translateY(30px); }
-            39.20% { opacity: 1; transform: translateY(0); }
-            44.13% { opacity: 1; transform: translateY(0); }
-            44.44% { opacity: 0; transform: translateY(-30px); }
-            /* S5 */
-            44.45%, 49.68% { opacity: 0; transform: translateY(30px); }
-            50.31% { opacity: 1; transform: translateY(0); }
-            55.24% { opacity: 1; transform: translateY(0); }
-            55.55% { opacity: 0; transform: translateY(-30px); }
-            /* S6 */
-            55.56%, 60.79% { opacity: 0; transform: translateY(30px); }
-            61.42% { opacity: 1; transform: translateY(0); }
-            66.35% { opacity: 1; transform: translateY(0); }
-            66.66% { opacity: 0; transform: translateY(-30px); }
-            /* S7 */
-            66.67%, 71.90% { opacity: 0; transform: translateY(30px); }
-            72.53% { opacity: 1; transform: translateY(0); }
-            77.46% { opacity: 1; transform: translateY(0); }
-            77.77% { opacity: 0; transform: translateY(-30px); }
-            /* S8 */
-            77.78%, 83.01% { opacity: 0; transform: translateY(30px); }
-            83.64% { opacity: 1; transform: translateY(0); }
-            88.57% { opacity: 1; transform: translateY(0); }
-            88.88% { opacity: 0; transform: translateY(-30px); }
-            /* S9 */
-            88.89%, 94.12% { opacity: 0; transform: translateY(30px); }
-            94.75% { opacity: 1; transform: translateY(0); }
-            99.68% { opacity: 1; transform: translateY(0); }
-            100% { opacity: 0; transform: translateY(-30px); }
+            0%, 5.23% { opacity: 0; transform: translateY(30px); } 5.86% { opacity: 1; transform: translateY(0); } 10.8% { opacity: 1; transform: translateY(0); } 11.11% { opacity: 0; transform: translateY(-30px); }
+            11.12%, 16.34% { opacity: 0; transform: translateY(30px); } 16.97% { opacity: 1; transform: translateY(0); } 21.91% { opacity: 1; transform: translateY(0); } 22.22% { opacity: 0; transform: translateY(-30px); }
+            22.23%, 27.45% { opacity: 0; transform: translateY(30px); } 28.08% { opacity: 1; transform: translateY(0); } 33.02% { opacity: 1; transform: translateY(0); } 33.33% { opacity: 0; transform: translateY(-30px); }
+            33.34%, 38.57% { opacity: 0; transform: translateY(30px); } 39.20% { opacity: 1; transform: translateY(0); } 44.13% { opacity: 1; transform: translateY(0); } 44.44% { opacity: 0; transform: translateY(-30px); }
+            44.45%, 49.68% { opacity: 0; transform: translateY(30px); } 50.31% { opacity: 1; transform: translateY(0); } 55.24% { opacity: 1; transform: translateY(0); } 55.55% { opacity: 0; transform: translateY(-30px); }
+            55.56%, 60.79% { opacity: 0; transform: translateY(30px); } 61.42% { opacity: 1; transform: translateY(0); } 66.35% { opacity: 1; transform: translateY(0); } 66.66% { opacity: 0; transform: translateY(-30px); }
+            66.67%, 71.90% { opacity: 0; transform: translateY(30px); } 72.53% { opacity: 1; transform: translateY(0); } 77.46% { opacity: 1; transform: translateY(0); } 77.77% { opacity: 0; transform: translateY(-30px); }
+            77.78%, 83.01% { opacity: 0; transform: translateY(30px); } 83.64% { opacity: 1; transform: translateY(0); } 88.57% { opacity: 1; transform: translateY(0); } 88.88% { opacity: 0; transform: translateY(-30px); }
+            88.89%, 94.12% { opacity: 0; transform: translateY(30px); } 94.75% { opacity: 1; transform: translateY(0); } 99.68% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-30px); }
         }
 
-
-        /* --- MODIFIED: Apply new 63s looping animations --- */
+        /* --- Apply looping animations --- */
         #home h1 {
             animation: cycle-h1 63s infinite ease-in-out;
         }
@@ -529,8 +376,89 @@
             color: var(--accent-color);
             margin-right: 1rem;
         }
+
+        /* --- NEW: Gallery Section --- */
+        #gallery {
+            background-color: var(--secondary-color);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 250px; /* Gives all items a uniform height */
+            cursor: pointer; /* Add pointer on hover */
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures image covers the box without stretching */
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
         
-        /* --- NEW: Video Section Styles --- */
+        /* --- Gallery Lightbox (Click to View Full) --- */
+        .lightbox {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 9999;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            animation: zoom 0.6s;
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0.1)}
+            to {transform: scale(1)}
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-close:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+
+        @media (max-width: 700px){
+            .lightbox-content {
+                width: 95%;
+            }
+        }
+        
+        /* --- Video Section Styles --- */
         #videos {
             background-color: var(--text-light); /* Alternating background color */
         }
@@ -557,7 +485,6 @@
             height: 100%;
             border: 0;
         }
-        /* --- END: Video Section Styles --- */
 
         /* --- Contact & Booking Section --- */
         #contact {
@@ -650,6 +577,20 @@
             text-align: center;
             padding: 1.5rem 0;
         }
+
+        /* --- Footer Social Icons --- */
+        .footer-social {
+            margin-bottom: 1rem;
+        }
+        .footer-social a {
+            color: var(--text-light);
+            font-size: 1.8rem;
+            margin: 0 0.75rem;
+            transition: color 0.3s ease;
+        }
+        .footer-social a:hover {
+            color: var(--accent-color);
+        }
         
         /* --- Responsive Design --- */
         @media (max-width: 992px) {
@@ -661,10 +602,6 @@
         @media (max-width: 768px) {
             h2 {
                 font-size: 2rem;
-            }
-            
-            #home {
-                /* background-position: left -80px center; */
             }
             
             .navbar ul {
@@ -774,6 +711,11 @@ input.invalid, textarea.invalid, select.invalid {
 </head>
 <body>
 
+<div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+</div>
+
     <header class="header">
         <nav class="navbar container">
             <a href="#home" class="logo">RAHMAN RICH</a>
@@ -782,6 +724,7 @@ input.invalid, textarea.invalid, select.invalid {
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
                 <li><a href="#videos" class="nav-link">Videos</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
                 <li class="cta-button"><a href="#contact">Book a Session</a></li>
@@ -879,11 +822,48 @@ input.invalid, textarea.invalid, select.invalid {
                  </ul>
              </div>
          </div>
+    </section> 
+
+    <section id="gallery">
+        <div class="container">
+            <h2>Photo Gallery</h2>
+            <div class="gallery-grid">
+                
+                <div class="gallery-item">
+                    <img src="assets/Photos/s1.png" alt="Rahman Rich speaking at event">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Photos/s6.png" alt="Audience listening to Rahman Rich">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Photos/s9.png" alt="Rahman Rich receiving an award">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Photos/006.jpg" alt="Rahman Rich at his desk">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Photos/s7.png" alt="Speaking at Hidayath High School">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Photos/home_bg.jpeg" alt="Presenting to a group">
+                </div>
+                 <div class="gallery-item">
+                    <img src="assets/Photos/s3.png" alt="Speaking at event">
+                </div>
+                 <div class="gallery-item">
+                    <img src="assets/Photos/s4.png" alt="Audience members">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Photos/s3.png" alt="Speaking at event">
+                </div>
+
+            </div>
+        </div>
     </section>
 
-  <section id="videos">
+    <section id="videos">
         <div class="container">
-            <h2>My Videos</h2>
+            <h2>Videos</h2>
             <div class="videos-grid">
                 
                 <div class="video-responsive">
@@ -898,20 +878,19 @@ input.invalid, textarea.invalid, select.invalid {
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/JWUTq6U_0uM" title="Placeholder Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="video-responsive">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/vz58X9OJGcM/" title="Placeholder Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/vz58X9OJGcM" title="Placeholder Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                    <div class="video-responsive">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4SfoZKrf9sg/" title="Placeholder Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4SfoZKrf9sg" title="Placeholder Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                    <div class="video-responsive">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/CXRVTJtUDLk/" title="Placeholder Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/CXRVTJtUDLk" title="Placeholder Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>               
 
             </div>
         </div>
     </section>
-        </div>
-    </section>
+
     <section id="contact">
         <div class="container">
             <h2>Contact & Booking</h2>
@@ -1006,6 +985,14 @@ input.invalid, textarea.invalid, select.invalid {
 
     <footer>
         <div class="container">
+            <div class="footer-social">
+                <a href="https://www.youtube.com/channel/UC-dD6N_P4FpXjIL-1-sA5Q" target="_blank" aria-label="YouTube Channel">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://wa.me/919497296349" target="_blank" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
             <p>&copy; 2025 Abdul Rahman. All Rights Reserved.</p>
         </div>
     </footer>
@@ -1030,9 +1017,9 @@ input.invalid, textarea.invalid, select.invalid {
         const sections = document.querySelectorAll('section');
         const navLi = document.querySelectorAll('.nav-menu li a');
 
-        window.addEventListener('scroll', ()=> {
+        window.addEventListener('scroll', () => {
             let current = '';
-            sections.forEach( section => {
+            sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
                 if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
@@ -1040,7 +1027,7 @@ input.invalid, textarea.invalid, select.invalid {
                 }
             })
             
-            navLi.forEach( a => {
+            navLi.forEach(a => {
                 a.classList.remove('active');
                 if (a.getAttribute('href').includes(current)) {
                     a.classList.add('active');
@@ -1096,14 +1083,12 @@ input.invalid, textarea.invalid, select.invalid {
             }
         });
 
-    </script>
-<script>
-    // --- Advanced REAL-TIME Form Validation Script ---
+    // --- SCRIPT FOR FORM VALIDATION AND LIGHTBOX ---
     document.addEventListener('DOMContentLoaded', function() {
         
-        // --- Set min date for program date input to prevent past dates ---
+        // --- Form Validation Script ---
         const dateInput = document.getElementById('program-date');
-        if(dateInput) {
+        if (dateInput) {
             const today = new Date();
             const yyyy = today.getFullYear();
             let mm = today.getMonth() + 1; // Months are 0-indexed
@@ -1119,7 +1104,6 @@ input.invalid, textarea.invalid, select.invalid {
         const bookingForm = document.getElementById('bookingForm');
         const submitButton = bookingForm.querySelector('button[type="submit"]');
 
-        // --- UPDATED fieldsToValidate array ---
         const fieldsToValidate = [
             { id: 'org-name', required: true, message: 'This field is required.' },
             { id: 'head-name', required: true, pattern: /^[a-zA-Z\s]+$/, message: 'Please enter a valid name (letters only).' },
@@ -1143,54 +1127,49 @@ input.invalid, textarea.invalid, select.invalid {
             }
         });
 
+        if (bookingForm) {
+            bookingForm.addEventListener('submit', function(event) {
+                event.preventDefault(); 
 
-        // --- Final Validation and AJAX Submission to your Pi Server ---
-if (bookingForm) {
-    bookingForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Stop the form from submitting
+                let isFormValid = true;
+                fieldsToValidate.forEach(field => {
+                    const input = document.getElementById(field.id);
+                    if (!input.disabled && !validateField(input, field)) {
+                        isFormValid = false;
+                    }
+                });
 
-        let isFormValid = true;
-        fieldsToValidate.forEach(field => {
-            const input = document.getElementById(field.id);
-            if (!input.disabled && !validateField(input, field)) {
-                isFormValid = false;
-            }
-        });
+                if (isFormValid) {
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Submitting...';
+                    const formData = new FormData(bookingForm);
 
-        if (isFormValid) {
-            submitButton.disabled = true;
-            submitButton.textContent = 'Submitting...';
-
-            const formData = new FormData(bookingForm);
-
-            // --- This is the corrected URL for your Tailscale server ---
-            fetch('https://pi-monitor.tailb72c55.ts.net/booking', { // Or 'http://localhost:3000/webhook' for local testing
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                alert(data.message); // Show message from your server
-                if (data.message.includes('successfully')) {
-                   bookingForm.reset();
-                   // Clear dropdowns and re-disable topic
-                   topicSelect.innerHTML = '<option value="" disabled selected>-- First select a service --</option>';
-                   topicSelect.disabled = true;
+                    // --- This is the correct URL for your Vercel API ---
+                    fetch('/booking', { 
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        alert(data.message); 
+                        if (data.message.includes('successfully')) {
+                           bookingForm.reset();
+                           topicSelect.innerHTML = '<option value="" disabled selected>-- First select a service --</option>';
+                           topicSelect.disabled = true;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Could not connect to the booking server. Please try again later.');
+                    })
+                    .finally(() => {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Submit Booking Request';
+                    });
                 }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Could not connect to the booking server. Please try again later.');
-            })
-            .finally(() => {
-                submitButton.disabled = false;
-                submitButton.textContent = 'Submit Booking Request';
             });
         }
-    });
-}
         
-        // --- UPDATED Helper Functions ---
         function validateField(input, rules) {
             let isValid = true;
             let errorMessage = '';
@@ -1199,17 +1178,13 @@ if (bookingForm) {
             if (rules.required && !value) {
                 isValid = false;
                 errorMessage = rules.message;
-            }
-            else if (rules.pattern && !rules.pattern.test(value)) {
+            } else if (rules.pattern && !rules.pattern.test(value)) {
                 isValid = false;
                 errorMessage = input.title || rules.message;
-            }
-            // --- NEW: Custom date validation logic ---
-            else if (rules.type === 'date' && value) {
-                const selectedDate = new Date(value + 'T00:00:00'); // Ensure local time
+            } else if (rules.type === 'date' && value) {
+                const selectedDate = new Date(value + 'T00:00:00');
                 const today = new Date();
-                today.setHours(0, 0, 0, 0); // Set to start of today
-                
+                today.setHours(0, 0, 0, 0); 
                 if (selectedDate < today) {
                     isValid = false;
                     errorMessage = 'Please select today or a date in the future.';
@@ -1241,6 +1216,30 @@ if (bookingForm) {
                 errorDiv.textContent = '';
             }
         }
+
+        // --- Gallery Lightbox Script ---
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.lightbox-close');
+        const galleryImages = document.querySelectorAll('#gallery .gallery-item img');
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', function() {
+                lightbox.style.display = 'block';
+                lightboxImg.src = this.src;
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+        }
+
+        closeBtn.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
     });
 </script>
 </body>

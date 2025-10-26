@@ -139,10 +139,9 @@
         /* --- Hero Section --- */
         #home {
             height: 100vh;
-            /* MODIFICATION: Replaced static background with animation */
             animation: changeBg 21s infinite ease-in-out;
             background-size: cover;
-            background-position: center; /* Changed from left to center for better image compatibility */
+            background-position: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -150,7 +149,7 @@
             text-align: center;
             color: var(--text-light);
             padding: 0 1rem;
-            overflow: hidden; /* Prevent content from showing before animation */
+            overflow: hidden; 
         }
 
         #home h1 {
@@ -171,9 +170,9 @@
             font-size: 1.1rem;
         }
 
-        /* --- ADDED: Hero Section Animations --- */
+        /* --- MODIFIED: Hero Section Animations --- */
 
-        /* Background slideshow animation */
+        /* Background slideshow animation (Unchanged) */
         @keyframes changeBg {
             0%, 100% {
                 background-image: linear-gradient(rgba(10, 45, 87, 0.7), rgba(10, 45, 87, 0.7)), url('/assets/Photos/home_bg.jpeg');
@@ -186,28 +185,101 @@
             }
         }
 
-        /* Content fade-in animation */
-        @keyframes fadeInContent {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* --- REMOVED: Old fadeInContent keyframes --- */
+
+        /* --- ADDED: 4 new keyframes for staggered, looping content --- */
+        
+        /* H1 Animation (Delay 1: ~1.0s) */
+        @keyframes cycle-h1 {
+            /* Slide 1 */
+            0%, 5% { opacity: 0; transform: translateY(30px); }
+            10% { opacity: 1; transform: translateY(0); } /* Fade in */
+            30% { opacity: 1; transform: translateY(0); } /* Hold */
+            33% { opacity: 0; transform: translateY(-30px); } /* Fade out */
+            /* Slide 2 */
+            33.01%, 38% { opacity: 0; transform: translateY(30px); } /* 33 + 5 */
+            43% { opacity: 1; transform: translateY(0); } /* 33 + 10 */
+            63% { opacity: 1; transform: translateY(0); } /* Hold */
+            66% { opacity: 0; transform: translateY(-30px); } /* Fade out */
+            /* Slide 3 */
+            66.01%, 71% { opacity: 0; transform: translateY(30px); } /* 66 + 5 */
+            76% { opacity: 1; transform: translateY(0); } /* 66 + 10 */
+            97% { opacity: 1; transform: translateY(0); } /* Hold */
+            100% { opacity: 0; transform: translateY(-30px); } /* Fade out */
         }
 
-        /* Apply content animations on page load */
-        #home h1, #home h3, #home p, #home .btn {
-            opacity: 0; /* Start hidden */
-            animation: fadeInContent 0.8s ease-out forwards;
+        /* H3 Animation (Delay 2: ~1.5s) */
+        @keyframes cycle-h3 {
+            /* Slide 1 */
+            0%, 7% { opacity: 0; transform: translateY(30px); }
+            12% { opacity: 1; transform: translateY(0); } /* Fade in */
+            30% { opacity: 1; transform: translateY(0); } /* Hold */
+            33% { opacity: 0; transform: translateY(-30px); } /* Fade out */
+            /* Slide 2 */
+            33.01%, 40% { opacity: 0; transform: translateY(30px); } /* 33 + 7 */
+            45% { opacity: 1; transform: translateY(0); } /* 33 + 12 */
+            63% { opacity: 1; transform: translateY(0); } /* Hold */
+            66% { opacity: 0; transform: translateY(-30px); } /* Fade out */
+            /* Slide 3 */
+            66.01%, 73% { opacity: 0; transform: translateY(30px); } /* 66 + 7 */
+            78% { opacity: 1; transform: translateY(0); } /* 66 + 12 */
+            97% { opacity: 1; transform: translateY(0); } /* Hold */
+            100% { opacity: 0; transform: translateY(-30px); } /* Fade out */
         }
 
-        #home h1 { animation-delay: 0.5s; }
-        #home h3 { animation-delay: 1.0s; }
-        #home p { animation-delay: 1.5s; }
-        #home .btn { animation-delay: 2.0s; }
+        /* P Animation (Delay 3: ~1.9s) */
+        @keyframes cycle-p {
+            /* Slide 1 */
+            0%, 9% { opacity: 0; transform: translateY(30px); }
+            14% { opacity: 1; transform: translateY(0); } /* Fade in */
+            30% { opacity: 1; transform: translateY(0); } /* Hold */
+            33% { opacity: 0; transform: translateY(-30px); } /* Fade out */
+            /* Slide 2 */
+            33.01%, 42% { opacity: 0; transform: translateY(30px); } /* 33 + 9 */
+            47% { opacity: 1; transform: translateY(0); } /* 33 + 14 */
+            63% { opacity: 1; transform: translateY(0); } /* Hold */
+            66% { opacity: 0; transform: translateY(-30px); } /* Fade out */
+            /* Slide 3 */
+            66.01%, 75% { opacity: 0; transform: translateY(30px); } /* 66 + 9 */
+            80% { opacity: 1; transform: translateY(0); } /* 66 + 14 */
+            97% { opacity: 1; transform: translateY(0); } /* Hold */
+            100% { opacity: 0; transform: translateY(-30px); } /* Fade out */
+        }
+
+        /* Button Animation (Delay 4: ~2.3s) */
+        @keyframes cycle-btn {
+            /* Slide 1 */
+            0%, 11% { opacity: 0; transform: translateY(30px); }
+            16% { opacity: 1; transform: translateY(0); } /* Fade in */
+            30% { opacity: 1; transform: translateY(0); } /* Hold */
+            33% { opacity: 0; transform: translateY(-30px); } /* Fade out */
+            /* Slide 2 */
+            33.01%, 44% { opacity: 0; transform: translateY(30px); } /* 33 + 11 */
+            49% { opacity: 1; transform: translateY(0); } /* 33 + 16 */
+            63% { opacity: 1; transform: translateY(0); } /* Hold */
+            66% { opacity: 0; transform: translateY(-30px); } /* Fade out */
+            /* Slide 3 */
+            66.01%, 77% { opacity: 0; transform: translateY(30px); } /* 66 + 11 */
+            82% { opacity: 1; transform: translateY(0); } /* 66 + 16 */
+            97% { opacity: 1; transform: translateY(0); } /* Hold */
+            100% { opacity: 0; transform: translateY(-30px); } /* Fade out */
+        }
+
+
+        /* --- REPLACED: Old animation rules --- */
+        /* Apply new looping, staggered animations */
+        #home h1 {
+            animation: cycle-h1 21s infinite ease-in-out;
+        }
+        #home h3 {
+            animation: cycle-h3 21s infinite ease-in-out;
+        }
+        #home p {
+            animation: cycle-p 21s infinite ease-in-out;
+        }
+        #home .btn {
+            animation: cycle-btn 21s infinite ease-in-out;
+        }
 
         
         /* --- About Section --- */
@@ -431,8 +503,7 @@
             }
             
             #home {
-                /* MODIFICATION: Removed specific background-position for mobile to use the 'center' default */
-                 background-position: left -80px center; 
+                /* background-position: left -80px center; */
             }
             
             .navbar ul {

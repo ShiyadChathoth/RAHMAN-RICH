@@ -1339,7 +1339,7 @@ input.invalid, textarea.invalid, select.invalid {
                     const formData = new FormData(bookingForm);
 
                     // --- Using your requested pi-monitor URL ---
-                    fetch('https://pi-monitor.tailb72c55.ts.net', { 
+                    fetch('https://pi-monitor.tailb72c55.ts.net/booking', { 
                         method: 'POST',
                         body: formData
                     })

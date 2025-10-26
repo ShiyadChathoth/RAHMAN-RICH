@@ -75,6 +75,25 @@
             background: #b88a0f;
         }
 
+        /* --- START: NEW Small Button Style --- */
+        .btn-small {
+            display: inline-block;
+            padding: 0.5rem 1rem; /* Smaller padding */
+            background: var(--primary-color); /* Use primary color */
+            color: var(--text-light);
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem; /* Slightly smaller font */
+            transition: background-color 0.3s ease;
+            margin-top: 1rem; /* Add space above the button */
+        }
+        .btn-small:hover {
+             background: #071f3d; /* Darker primary color */
+        }
+        /* --- END: NEW Small Button Style --- */
+
         /* --- Header & Navigation --- */
         .header {
             background: var(--text-light);
@@ -311,7 +330,12 @@
         .service-card h3 {
              color: var(--primary-color);
              font-size: 1.3rem;
+             margin-bottom: 0.8rem; /* Adjusted margin */
         }
+        .service-card p {
+            margin-bottom: 0; /* Remove default bottom margin if button follows */
+        }
+
 
         /* --- Experience Section --- */
         .experience-grid {
@@ -808,26 +832,39 @@ input.invalid, textarea.invalid, select.invalid {
     <section id="services">
         <div class="container">
             <h2>How I Can Help</h2>
+            
             <div class="services-grid">
                 <div class="service-card">
                     <i class="fas fa-users"></i>
                     <h3>Parenting Empowerment</h3>
                     <p>Navigate the challenges of modern parenting with proven strategies for building stronger, healthier family relationships.</p>
+                    <a href="https://rahmanrichvengad.blogspot.com/search/label/Parenting" target="_blank" class="btn-small">
+                        Visit My Blog
+                    </a>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-chalkboard-teacher"></i>
                     <h3>Teachers' Empowerment</h3>
                     <p>Equipping educators with the tools and motivation to create inspiring and effective learning environments.</p>
+                     <a href="https://rahmanrichvengad.blogspot.com/search/label/Teachers" target="_blank" class="btn-small">
+                        Visit My Blog
+                    </a>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-lightbulb"></i>
                     <h3>Student Motivation</h3>
                     <p>Igniting a passion for learning in students, helping them overcome obstacles and achieve their academic and personal goals.</p>
+                     <a href="https://rahmanrichvengad.blogspot.com/search/label/Student" target="_blank" class="btn-small">
+                        Visit My Blog
+                    </a>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-heart"></i>
                     <h3>Family Management</h3>
                     <p>Providing counseling and practical advice to foster harmony, communication, and resilience within the family unit.</p>
+                     <a href="https://rahmanrichvengad.blogspot.com/search/label/Family" target="_blank" class="btn-small">
+                        Visit My Blog
+                    </a>
                 </div>
             </div>
         </div>

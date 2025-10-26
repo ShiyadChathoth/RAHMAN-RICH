@@ -139,9 +139,10 @@
         /* --- Hero Section --- */
         #home {
             height: 100vh;
-            background: linear-gradient(rgba(10, 45, 87, 0.7), rgba(10, 45, 87, 0.7)), url('/assets/Photos/home_bg.jpeg');
+            /* MODIFICATION: Replaced static background with animation */
+            animation: changeBg 21s infinite ease-in-out;
             background-size: cover;
-            background-position: left;
+            background-position: center; /* Changed from left to center for better image compatibility */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -149,6 +150,7 @@
             text-align: center;
             color: var(--text-light);
             padding: 0 1rem;
+            overflow: hidden; /* Prevent content from showing before animation */
         }
 
         #home h1 {
@@ -168,6 +170,45 @@
             margin-bottom: 2rem;
             font-size: 1.1rem;
         }
+
+        /* --- ADDED: Hero Section Animations --- */
+
+        /* Background slideshow animation */
+        @keyframes changeBg {
+            0%, 100% {
+                background-image: linear-gradient(rgba(10, 45, 87, 0.7), rgba(10, 45, 87, 0.7)), url('/assets/Photos/home_bg.jpeg');
+            }
+            33% {
+                background-image: linear-gradient(rgba(10, 45, 87, 0.7), rgba(10, 45, 87, 0.7)), url('/assets/Photos/007.jpg');
+            }
+            66% {
+                background-image: linear-gradient(rgba(10, 45, 87, 0.7), rgba(10, 45, 87, 0.7)), url('/assets/Photos/006.jpg');
+            }
+        }
+
+        /* Content fade-in animation */
+        @keyframes fadeInContent {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Apply content animations on page load */
+        #home h1, #home h3, #home p, #home .btn {
+            opacity: 0; /* Start hidden */
+            animation: fadeInContent 0.8s ease-out forwards;
+        }
+
+        #home h1 { animation-delay: 0.5s; }
+        #home h3 { animation-delay: 1.0s; }
+        #home p { animation-delay: 1.5s; }
+        #home .btn { animation-delay: 2.0s; }
+
         
         /* --- About Section --- */
         #about .about-content {
@@ -390,7 +431,8 @@
             }
             
             #home {
-                background-position: left -80px center;
+                /* MODIFICATION: Removed specific background-position for mobile to use the 'center' default */
+                 background-position: left -80px center; 
             }
             
             .navbar ul {
@@ -533,8 +575,8 @@ input.invalid, textarea.invalid, select.invalid {
             <img src="/assets/Photos/007.jpg" alt="Abdul Rahman Profile Picture"> 
             <div>
                 <h3>My Journey in Life Skills & Empowerment</h3>
-                <p>With a passion for unlocking human potential and a rich career spanning over 19 years, I have dedicated myself to empowering individuals and organizations. My journey has taken me from counseling units in Thrissur to directing RICH, all with one goal: to provide practical strategies that foster a renewed sense of purpose.</p>
-                <p>I believe in interactive sessions that don't just teach, but inspire genuine change. My work with esteemed organizations like KRSMA and IAME has reinforced my commitment to delivering valuable insights that resonate long after the workshop is over.</p>
+                <p>With a passion for unlocking human potential and a rich career spanning over 19 years, I have dedicated myself to empowering individuals and organisations. My journey has taken me from a counselling Institution in Thrissur to directing RICH, all with one goal: to provide practical strategies that foster a renewed sense of purpose.</p>
+                <p>I believe in interactive sessions that don't just teach, but inspire genuine change. My work with esteemed organisations like Sahodaya, KRSMA and ICI has reinforced my commitment to delivering valuable insights that resonate long after the workshop is over.</p>
             </div>
         </div>
     </section>
@@ -692,7 +734,7 @@ input.invalid, textarea.invalid, select.invalid {
                     <p><i class="fas fa-phone"></i>+91 9497296349</p>
                     <p><i class="fab fa-whatsapp"></i> +91 9497296349</p>
                     <p><i class="fas fa-envelope"></i>rahmanrichvengad@gmail.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> CK. Abdul Rahman<br>Director of RICH<br>PO. VENGAD, Kannur Dist.<br>PIN: 670612, Kerala</p>
+                    <p><i class="fas fa-map-marker-alt"></i>Abdul Rahman Vengad<br>Director of RICH<br>PO. VENGAD, Kannur Dist.<br>PIN: 670612, Kerala</p>
                 </div>
             </div>
         </div>

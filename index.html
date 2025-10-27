@@ -1038,7 +1038,7 @@ input.invalid, textarea.invalid, select.invalid {
                     <img src="assets/Photos/g19.jpeg" alt="Speaking at event">
                 </div>
                 <div class="gallery-item hidden">
-                    <img src="assets/Photos/g17.jpeg" alt="Speaking at event">
+                    <img src="assets.../Photos/g17.jpeg" alt="Speaking at event">
                 </div>
                 <div class="gallery-item hidden">
                     <img src="assets/Photos/g18.jpeg" alt="Speaking at event">
@@ -1287,16 +1287,20 @@ input.invalid, textarea.invalid, select.invalid {
         // --- Form Validation Script ---
         const dateInput = document.getElementById('program-date');
         if (dateInput) {
-            const today = new Date();
-            const yyyy = today.getFullYear();
-            let mm = today.getMonth() + 1; // Months are 0-indexed
-            let dd = today.getDate();
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1); // Set to tomorrow
+            tomorrow.setHours(0, 0, 0, 0); // Start from midnight
+
+            const yyyy = tomorrow.getFullYear();
+            let mm = tomorrow.getMonth() + 1; // Months are 0-indexed
+            let dd = tomorrow.getDate();
             
             if (mm < 10) mm = '0' + mm;
             if (dd < 10) dd = '0' + dd;
             
-            const minDate = `${yyyy}-${mm}-${dd}`;
-            dateInput.setAttribute('min', minDate);
+            // Format for datetime-local input (YYYY-MM-DDTHH:MM)
+            const minDateTime = `${yyyy}-${mm}-${dd}T00:00`; 
+            dateInput.setAttribute('min', minDateTime);
         }
 
         const bookingForm = document.getElementById('bookingForm');
@@ -1386,13 +1390,16 @@ input.invalid, textarea.invalid, select.invalid {
             } else if (rules.pattern && !rules.pattern.test(value)) {
                 isValid = false;
                 errorMessage = input.title || rules.message;
-            } else if (rules.type === 'date' && value) {
-                const selectedDate = new Date(value + 'T00:00:00');
-                const today = new Date();
-                today.setHours(0, 0, 0, 0); 
-                if (selectedDate < today) {
+            } else if (rules.type === 'date' && value) { // This block handles 'program-date'
+                const selectedDate = new Date(value); // Parse the datetime-local string
+                
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                tomorrow.setHours(0, 0, 0, 0); // Set to midnight tomorrow
+
+                if (selectedDate < tomorrow) {
                     isValid = false;
-                    errorMessage = 'Please select today or a date in the future.';
+                    errorMessage = 'Please select a date and time from tomorrow onwards.'; // Updated error message
                 }
             }
 

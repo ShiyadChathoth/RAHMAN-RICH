@@ -1347,10 +1347,14 @@ input.invalid, textarea.invalid, select.invalid {
                     const formData = new FormData(bookingForm);
 
                     // --- Using your requested pi-monitor URL ---
-                    fetch('https://pi-monitor.tailb72c55.ts.net/booking', { 
-                        method: 'POST',
-                        body: formData
-                    })
+// --- CHANGE THIS LINE ---
+        // OLD: fetch('https://pi-monitor.tailb72c55.ts.net/booking', { 
+        // NEW:
+        // Use a relative path that will be proxied by Vercel's configuration
+        fetch('/api/booking', { 
+            method: 'POST',
+            body: formData
+        })
                     .then(response => response.json())
                     .then(data => {
                         alert(data.message); 

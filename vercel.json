@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/booking",
+      "destination": "https://pi-monitor.tailb72c55.ts.net/booking"
+    }
+  ]
+}

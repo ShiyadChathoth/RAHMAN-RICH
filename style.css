@@ -1,0 +1,767 @@
+
+        /* --- General & Global Styles --- */
+        :root {
+            --primary-color: #0a2d57; /* Dark Blue */
+            --secondary-color: #f4f7fa; /* Light Grey Background */
+            --accent-color: #d4a017; /* Gold */
+            --text-dark: #333;
+            --text-light: #fff;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Lato', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background: var(--accent-color);
+            color: var(--text-light);
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            cursor: pointer; /* Ensure button shows pointer */
+        }
+
+        .btn:hover {
+            background: #b88a0f;
+        }
+
+        /* --- START: NEW Small Button Style --- */
+        .btn-small {
+            display: inline-block;
+            padding: 0.5rem 1rem; /* Smaller padding */
+            background: var(--primary-color); /* Use primary color */
+            color: var(--text-light);
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem; /* Slightly smaller font */
+            transition: background-color 0.3s ease;
+            margin-top: 1rem; /* Add space above the button */
+        }
+        .btn-small:hover {
+             background: #071f3d; /* Darker primary color */
+        }
+        /* --- END: NEW Small Button Style --- */
+
+        /* --- Header & Navigation --- */
+        .header {
+            background: var(--text-light);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .navbar .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar ul li a {
+            color: var(--primary-color);
+            padding: 1rem;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .navbar ul li a:hover, .navbar ul li a.active {
+            color: var(--accent-color);
+        }
+
+        .navbar .cta-button a {
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            margin-left: 1rem;
+        }
+        .navbar .cta-button a:hover {
+            background-color: #b88a0f;
+            color: var(--text-light);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        /* --- Hero Section --- */
+        #home {
+            height: 100vh;
+            animation: changeBg 63s infinite ease-in-out;
+            background-size: cover;
+            background-position: center; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--text-light);
+            padding: 0 1rem;
+            overflow: hidden;
+        }
+
+        #home h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        #home h3 {
+            font-size: 1.8rem;
+            font-family: var(--font-body);
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        #home p {
+            max-width: 600px;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* --- Background Slideshow (9 images) --- */
+        @keyframes changeBg {
+            0%, 100% {
+                background-image: linear-gradient(rgba(10, 45, 87, 0.7), rgba(10, 45, 87, 0.7)), url('/assets/Photos/s1.png');
+            }
+            11.11% {
+                background-image: linear-gradient(rgba(10, 45, 87, 0.7), rgba(10, 45, 87, 0.7)), url('/assets/Photos/s2.png');
+            }
+            22.22% {
+                background-image: linear-gradient(rgba(10, 45, 87, 0.7), rgba(10, 45, 87, 0.7)), url('/assets/Photos/s3.png');
+            }
+            33.33% {
+                background-image: linear-gradient(rgba(10, 45, 87, 0.7), rgba(10, 45, 87, 0.7)), url('/assets/Photos/s4.png');
+            }
+            44.44% {
+                background-image: linear-gradient(rgba(10, 45, 87, 0.7), rgba(10, 45, 87, 0.7)), url('/assets/Photos/s5.png');
+            }
+            55.55% {
+                background-image: linear-gradient(rgba(10, 45, 87, 0.7), rgba(10, 45, 87, 0.7)), url('/assets/Photos/s6.png');
+            }
+            66.66% {
+                background-image: linear-gradient(rgba(10, 45, 87, 0.7), rgba(10, 45, 87, 0.7)), url('/assets/Photos/s7.png');
+            }
+            77.77% {
+                background-image: linear-gradient(rgba(10, 45, 87, 0.7), rgba(10, 45, 87, 0.7)), url('/assets/Photos/s8.png');
+            }
+            88.88% {
+                background-image: linear-gradient(rgba(10, 45, 87, 0.7), rgba(10, 45, 87, 0.7)), url('/assets/Photos/s9.png');
+            }
+        }
+
+        /* --- Text Cycle Keyframes for 63s loop --- */
+        @keyframes cycle-h1 {
+            0%, 3.33% { opacity: 0; transform: translateY(30px); } 3.96% { opacity: 1; transform: translateY(0); } 10.8% { opacity: 1; transform: translateY(0); } 11.11% { opacity: 0; transform: translateY(-30px); }
+            11.12%, 14.44% { opacity: 0; transform: translateY(30px); } 15.07% { opacity: 1; transform: translateY(0); } 21.91% { opacity: 1; transform: translateY(0); } 22.22% { opacity: 0; transform: translateY(-30px); }
+            22.23%, 25.55% { opacity: 0; transform: translateY(30px); } 26.18% { opacity: 1; transform: translateY(0); } 33.02% { opacity: 1; transform: translateY(0); } 33.33% { opacity: 0; transform: translateY(-30px); }
+            33.34%, 36.66% { opacity: 0; transform: translateY(30px); } 37.29% { opacity: 1; transform: translateY(0); } 44.13% { opacity: 1; transform: translateY(0); } 44.44% { opacity: 0; transform: translateY(-30px); }
+            44.45%, 47.77% { opacity: 0; transform: translateY(30px); } 48.40% { opacity: 1; transform: translateY(0); } 55.24% { opacity: 1; transform: translateY(0); } 55.55% { opacity: 0; transform: translateY(-30px); }
+            55.56%, 58.88% { opacity: 0; transform: translateY(30px); } 59.51% { opacity: 1; transform: translateY(0); } 66.35% { opacity: 1; transform: translateY(0); } 66.66% { opacity: 0; transform: translateY(-30px); }
+            66.67%, 69.99% { opacity: 0; transform: translateY(30px); } 70.62% { opacity: 1; transform: translateY(0); } 77.46% { opacity: 1; transform: translateY(0); } 77.77% { opacity: 0; transform: translateY(-30px); }
+            77.78%, 81.10% { opacity: 0; transform: translateY(30px); } 81.73% { opacity: 1; transform: translateY(0); } 88.57% { opacity: 1; transform: translateY(0); } 88.88% { opacity: 0; transform: translateY(-30px); }
+            88.89%, 92.21% { opacity: 0; transform: translateY(30px); } 92.84% { opacity: 1; transform: translateY(0); } 99.68% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-30px); }
+        }
+        @keyframes cycle-h3 {
+            0%, 3.96% { opacity: 0; transform: translateY(30px); } 4.59% { opacity: 1; transform: translateY(0); } 10.8% { opacity: 1; transform: translateY(0); } 11.11% { opacity: 0; transform: translateY(-30px); }
+            11.12%, 15.07% { opacity: 0; transform: translateY(30px); } 15.70% { opacity: 1; transform: translateY(0); } 21.91% { opacity: 1; transform: translateY(0); } 22.22% { opacity: 0; transform: translateY(-30px); }
+            22.23%, 26.18% { opacity: 0; transform: translateY(30px); } 26.81% { opacity: 1; transform: translateY(0); } 33.02% { opacity: 1; transform: translateY(0); } 33.33% { opacity: 0; transform: translateY(-30px); }
+            33.34%, 37.30% { opacity: 0; transform: translateY(30px); } 37.93% { opacity: 1; transform: translateY(0); } 44.13% { opacity: 1; transform: translateY(0); } 44.44% { opacity: 0; transform: translateY(-30px); }
+            44.45%, 48.41% { opacity: 0; transform: translateY(30px); } 49.04% { opacity: 1; transform: translateY(0); } 55.24% { opacity: 1; transform: translateY(0); } 55.55% { opacity: 0; transform: translateY(-30px); }
+            55.56%, 59.52% { opacity: 0; transform: translateY(30px); } 60.15% { opacity: 1; transform: translateY(0); } 66.35% { opacity: 1; transform: translateY(0); } 66.66% { opacity: 0; transform: translateY(-30px); }
+            66.67%, 70.63% { opacity: 0; transform: translateY(30px); } 71.26% { opacity: 1; transform: translateY(0); } 77.46% { opacity: 1; transform: translateY(0); } 77.77% { opacity: 0; transform: translateY(-30px); }
+            77.78%, 81.74% { opacity: 0; transform: translateY(30px); } 82.37% { opacity: 1; transform: translateY(0); } 88.57% { opacity: 1; transform: translateY(0); } 88.88% { opacity: 0; transform: translateY(-30px); }
+            88.89%, 92.85% { opacity: 0; transform: translateY(30px); } 93.48% { opacity: 1; transform: translateY(0); } 99.68% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-30px); }
+        }
+        @keyframes cycle-p {
+            0%, 4.6% { opacity: 0; transform: translateY(30px); } 5.23% { opacity: 1; transform: translateY(0); } 10.8% { opacity: 1; transform: translateY(0); } 11.11% { opacity: 0; transform: translateY(-30px); }
+            11.12%, 15.71% { opacity: 0; transform: translateY(30px); } 16.34% { opacity: 1; transform: translateY(0); } 21.91% { opacity: 1; transform: translateY(0); } 22.22% { opacity: 0; transform: translateY(-30px); }
+            22.23%, 26.82% { opacity: 0; transform: translateY(30px); } 27.45% { opacity: 1; transform: translateY(0); } 33.02% { opacity: 1; transform: translateY(0); } 33.33% { opacity: 0; transform: translateY(-30px); }
+            33.34%, 37.94% { opacity: 0; transform: translateY(30px); } 38.57% { opacity: 1; transform: translateY(0); } 44.13% { opacity: 1; transform: translateY(0); } 44.44% { opacity: 0; transform: translateY(-30px); }
+            44.45%, 49.05% { opacity: 0; transform: translateY(30px); } 49.68% { opacity: 1; transform: translateY(0); } 55.24% { opacity: 1; transform: translateY(0); } 55.55% { opacity: 0; transform: translateY(-30px); }
+            55.56%, 60.16% { opacity: 0; transform: translateY(30px); } 60.79% { opacity: 1; transform: translateY(0); } 66.35% { opacity: 1; transform: translateY(0); } 66.66% { opacity: 0; transform: translateY(-30px); }
+            66.67%, 71.27% { opacity: 0; transform: translateY(30px); } 71.90% { opacity: 1; transform: translateY(0); } 77.46% { opacity: 1; transform: translateY(0); } 77.77% { opacity: 0; transform: translateY(-30px); }
+            77.78%, 82.38% { opacity: 0; transform: translateY(30px); } 83.01% { opacity: 1; transform: translateY(0); } 88.57% { opacity: 1; transform: translateY(0); } 88.88% { opacity: 0; transform: translateY(-30px); }
+            88.89%, 93.49% { opacity: 0; transform: translateY(30px); } 94.12% { opacity: 1; transform: translateY(0); } 99.68% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-30px); }
+        }
+        @keyframes cycle-btn {
+            0%, 5.23% { opacity: 0; transform: translateY(30px); } 5.86% { opacity: 1; transform: translateY(0); } 10.8% { opacity: 1; transform: translateY(0); } 11.11% { opacity: 0; transform: translateY(-30px); }
+            11.12%, 16.34% { opacity: 0; transform: translateY(30px); } 16.97% { opacity: 1; transform: translateY(0); } 21.91% { opacity: 1; transform: translateY(0); } 22.22% { opacity: 0; transform: translateY(-30px); }
+            22.23%, 27.45% { opacity: 0; transform: translateY(30px); } 28.08% { opacity: 1; transform: translateY(0); } 33.02% { opacity: 1; transform: translateY(0); } 33.33% { opacity: 0; transform: translateY(-30px); }
+            33.34%, 38.57% { opacity: 0; transform: translateY(30px); } 39.20% { opacity: 1; transform: translateY(0); } 44.13% { opacity: 1; transform: translateY(0); } 44.44% { opacity: 0; transform: translateY(-30px); }
+            44.45%, 49.68% { opacity: 0; transform: translateY(30px); } 50.31% { opacity: 1; transform: translateY(0); } 55.24% { opacity: 1; transform: translateY(0); } 55.55% { opacity: 0; transform: translateY(-30px); }
+            55.56%, 60.79% { opacity: 0; transform: translateY(30px); } 61.42% { opacity: 1; transform: translateY(0); } 66.35% { opacity: 1; transform: translateY(0); } 66.66% { opacity: 0; transform: translateY(-30px); }
+            66.67%, 71.90% { opacity: 0; transform: translateY(30px); } 72.53% { opacity: 1; transform: translateY(0); } 77.46% { opacity: 1; transform: translateY(0); } 77.77% { opacity: 0; transform: translateY(-30px); }
+            77.78%, 83.01% { opacity: 0; transform: translateY(30px); } 83.64% { opacity: 1; transform: translateY(0); } 88.57% { opacity: 1; transform: translateY(0); } 88.88% { opacity: 0; transform: translateY(-30px); }
+            88.89%, 94.12% { opacity: 0; transform: translateY(30px); } 94.75% { opacity: 1; transform: translateY(0); } 99.68% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-30px); }
+        }
+
+        /* --- Apply looping animations --- */
+        #home h1 {
+            animation: cycle-h1 63s infinite ease-in-out;
+        }
+        #home h3 {
+            animation: cycle-h3 63s infinite ease-in-out;
+        }
+        #home p {
+            animation: cycle-p 63s infinite ease-in-out;
+        }
+        #home .btn {
+            animation: cycle-btn 63s infinite ease-in-out;
+        }
+        
+        /* --- About Section --- */
+        #about .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        #about img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* --- Services Section --- */
+        #services {
+            background-color: var(--secondary-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--text-light);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+             color: var(--primary-color);
+             font-size: 1.3rem;
+             margin-bottom: 0.8rem; /* Adjusted margin */
+        }
+        .service-card p {
+            margin-bottom: 0; /* Remove default bottom margin if button follows */
+        }
+
+
+        /* --- Experience Section --- */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            bottom: 10px;
+            width: 2px;
+            background: var(--accent-color);
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -39px;
+            top: 7px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 2px solid var(--text-light);
+        }
+
+        .timeline-item h4 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+
+        .timeline-item p {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .qualifications-list ul {
+            list-style-type: none;
+        }
+        
+        .qualifications-list li {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .qualifications-list i {
+            color: var(--accent-color);
+            margin-right: 1rem;
+        }
+
+        /* --- Gallery Section --- */
+        #gallery {
+            background-color: var(--secondary-color);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 250px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* --- Gallery Lightbox (Click to View Full) --- */
+        .lightbox {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 9999;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            animation: zoom 0.6s;
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0.1)}
+            to {transform: scale(1)}
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-close:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+
+        @media (max-width: 700px){
+            .lightbox-content {
+                width: 95%;
+            }
+        }
+
+        /* --- Styles for Show More Button --- */
+        .gallery-item.hidden, .poster-item.hidden {
+            display: none;
+        }
+        .gallery-btn-container, .poster-btn-container {
+            text-align: center;
+            margin-top: 2rem; /* Add some space above the button */
+        }
+
+        /* --- NEW: Poster Section Styles --- */
+        #posters {
+            background-color: var(--text-light); /* Alternating color */
+        }
+        .poster-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .poster-item {
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 350px; /* Posters are often taller */
+            cursor: pointer;
+        }
+        .poster-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Use cover to fill the space */
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .poster-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* --- Video Section Styles --- */
+        #videos {
+            background-color: var(--secondary-color); /* Alternating color */
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .video-responsive {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .video-responsive iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- Contact & Booking Section --- */
+        #contact {
+            background-color: var(--text-light);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            background: var(--secondary-color); /* Light background for contrast */
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .booking-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .booking-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .required {
+            color: red;
+            margin-left: 3px;
+        }
+        
+        .booking-form input, .booking-form textarea, .booking-form select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        /* Style for date picker */
+        .booking-form input[type="date"] {
+            -webkit-appearance: none;
+            appearance: none;
+            position: relative;
+        }
+        
+        .booking-form button {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            background: var(--primary-color);
+            color: var(--text-light);
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .booking-form button:hover {
+            background: #071f3d;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary-color);
+        }
+        
+        .contact-info p {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info i {
+            color: var(--primary-color);
+            margin-right: 1rem;
+            margin-top: 5px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+
+        /* --- Footer Social Icons --- */
+        .footer-social {
+            margin-bottom: 1rem;
+        }
+        .footer-social a {
+            color: var(--text-light);
+            font-size: 1.8rem;
+            margin: 0 0.75rem;
+            transition: color 0.3s ease;
+        }
+        .footer-social a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* --- Responsive Design --- */
+       @media (max-width: 992px) {
+             .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* --- RULES TO SHOW HAMBURGER ON TABLETS --- */
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--text-light);
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+
+            .navbar ul.active {
+                display: flex;
+            }
+            
+            .navbar ul li {
+                text-align: center;
+                width: 100%;
+            }
+            
+            .navbar ul li a {
+                padding: 1rem;
+                display: block;
+            }
+            
+            .navbar .cta-button a {
+                background-color: transparent;
+                color: var(--primary-color);
+                padding: 1rem;
+                margin-left: 0;
+                border-radius: 0;
+            }
+
+            .navbar .cta-button a:hover {
+                 background-color: transparent;
+                 color: var(--accent-color);
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2rem;
+            }
+            #home {
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+            /* Consolidating mobile font rules for #home */
+            #home h1 {
+                font-size: 2rem; 
+                margin-bottom: 0.5rem;
+            }
+            #home h3 {
+                font-size: 1.1rem; 
+                margin-bottom: 1rem;
+            }
+            #home p {
+                font-size: 0.9rem; 
+                margin-bottom: 1.5rem;
+            }
+
+            #about .about-content,
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #about .about-content img {
+                margin: 0 auto 2rem auto;
+                display: block;
+            }
+
+            .contact-grid {
+                padding: 2rem;
+            }
+
+            .booking-form {
+                overflow-x: auto;
+                padding: 1rem;
+                background: #fdfdfd;
+                border-radius: 5px;
+            }
+        }
+
+        /* --- Makes the mobile menu scrollable on short screens (landscape) --- */
+        @media (max-height: 450px) and (orientation: landscape) {
+            .navbar ul.active {
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
+            }
+
+            #home {
+                height: auto;
+                min-height: 100vh;
+                padding-top: 100px;
+                padding-bottom: 40px;
+            }
+        }
+        .error-message {
+    color: #d93025; /* Red color for error text */
+    font-size: 0.8rem;
+    margin-top: 4px;
+    display: none; /* Hidden by default */
+}
+
+/* This class will be added by JavaScript to show the message */
+.error-message.visible {
+    display: block;
+}
+
+/* This class will be added to highlight the invalid input field */
+input.invalid, textarea.invalid, select.invalid {
+    border-color: #d93025; /* Red border for the invalid field */
+    border-width: 2px;
+}
